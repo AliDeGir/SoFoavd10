@@ -1,0 +1,257 @@
+:root {
+    --col-1: #8e8d8a;
+    --col-2: #eee2dc;
+    --logoColor: #c2b6ab;
+    --col-4: #123c69;
+    --col-5: #ac3b61;
+    --col-6: #bdb1a6;
+    --col-7: #321921;
+    --col-8: #6c5a58;
+    --col-9: #000000;
+    --col-10: #333;
+    --col-11: #fff;
+    --col-12: #111;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    overflow: auto;
+    background: #111;
+}
+header {
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    background: var(--logoColor);
+    position: fixed;
+    top: 0;
+}
+.logoImg img {
+    height: 15vh;
+}
+.logoText {
+    display: flex;
+    align-items: center;
+    color: var(--col-7);
+}
+nav {
+    background: #333;
+    height: 4vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 15vh;
+    width: 100%;
+}
+.nav-links {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    /* align-items: center; */
+    list-style: none;
+}
+.nav-links li {
+    display: flex;
+    /* justify-content: space-around; */
+}
+.nav-links a {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    color: var(--logoColor);
+    border-bottom:2px solid transparent;
+    transition:0.5s ease;
+    transform: translateX(0%);
+}
+.nav-links a:hover {
+    color: rgb(90, 90, 140);
+    font-weight: 800;
+    letter-spacing: .3vw;
+}
+nav div{
+    box-sizing: border-box;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition:all 0.5s ease;
+}
+.burger{
+    display: none;
+}
+#google_translate_element {
+    width: 200px;
+    height: 30px;
+    background-color: var(--logoColor);
+    position: fixed;
+    top: 9vh;
+    right: -3vw;
+    z-index: 9999;
+}
+.lang-hider {
+    width: 160px;
+    height: 20px;
+    background-color: var(--logoColor);
+    position: absolute;
+    top: 4px;
+    left: 139px;
+}
+.displayOnClick {
+    display: none;
+}
+#loadOnClick {
+    padding: 20vh 5vw 5vh;
+    line-height: 1.5;
+    color: var(--logoColor);
+}
+ol {
+    list-style: circle;
+}
+#GRID {
+    display: grid;
+    grid-template-columns: 45% 45%;
+}
+.grid > div {
+    border: 1px solid var(--logoColor);
+    padding: 1vh 1vw;
+}
+.oneBYone, .oneBYtwo {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.hidden {
+    visibility: hidden;
+}
+.card-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card {
+    width: 100%;
+}
+.back a {
+    color: var(--logoColor);
+}
+.forbund {
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.forbund a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+.card-container img {
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+}
+.back a {
+    text-decoration: none;
+}
+.back a:hover {
+    color: red;
+    font-weight: 900;
+}
+@media only screen and (max-width: 760px){
+    nav{
+        justify-content: space-around;
+        width: 100%;
+        z-index: 44;
+        /* padding: 0 5vw; */
+    }
+
+    .nav-links{
+        position: fixed;
+        right: 0;
+        top: 19vh;
+        min-height:81vh;
+        background: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        width: 50%;
+        margin: 0;
+        padding: 0;
+        transform: translateX(100%);
+        transition:All 0.5s ease-in;
+        justify-content: space-around;
+    }
+
+    .nav-links a{
+        opacity: 0;
+        font-size: 1em;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    .spacer {
+        min-width: 60vw;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+   
+}
+
+@media only screen and (max-width: 640px){
+    nav{
+        justify-content: space-around;
+        padding: 0 5vw;
+    }
+}
+
+.nav-active{
+    transform: translateX(0);
+}
+
+@media only screen and (max-width: 460px){
+    .nav-links{
+        width: 100%;
+        transition:All 0.5s ease;
+    }
+    .forbund a {
+        font-size: 1.2em;
+    }
+}
+
+.nav-active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-405deg) translate(-5px,6px );
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(405deg) translate(-5px,-6px );
+}
