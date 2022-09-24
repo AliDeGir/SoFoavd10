@@ -2,7 +2,7 @@ function checkPassword() {
     if (document.getElementById('PASSWORD').value == 123) {
         document.getElementById('HIDDEN-CONTAINER').classList.remove("hidden");
         document.getElementById('FORM-POPUP').style.visibility= "hidden"
-        document.getElementById('VIP-BTN').style.visibility= "hidden"
+        document.getElementById('VIP-BTN').style.display= "none"
     } else {
         document.getElementById('PASSWORD').value= ""; // RESETTING THE PASSWORD AFTER FAIL
         alert('Invalid Password!!'); password.setSelectionRange(0, password.value.length);
