@@ -145,6 +145,15 @@
     <div id="Medlemmer" class="displayOnClick">
         <h2>Kun for medlemmer:</h2><br>
         <p>Passord er 123. (Denne teksten skal fjernes etterhvert.)</p>
+        <div id="FORM-POPUP" class="form-popup">
+            <div class="form-container">
+                <h1>Login</h1>
+                <input type="password" id="PASSWORD" class="password" value="" onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
+                <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
+                <button  id="LOGIN-BTN" class="login-btn" onclick="checkPassword()">Login</button>
+                <button type="submit" id="CANCEL-BTN" class="cancel-btn" onclick="closeForm()">Cancel</button>
+            </div>
+        </div>
         <div class="hidden" id="HIDDEN-CONTAINER">
             <h3>Viktig!</h3><br>
             <ol>
@@ -158,15 +167,6 @@
                 <li>Hvis du ikke har fått lønnsøkning og etterbetaling fra april/mai, send meg en mail/sms.</li>
                 <li>Blir du trekt for kost under ferier og sykemeldinger, send meg en e-post/sms.</li>
             </ol>
-        </div>
-        <div id="FORM-POPUP" class="form-popup">
-            <div class="form-container">
-                <h1>Login</h1>
-                <input type="password" id="PASSWORD" class="password" value="" onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
-                <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
-                <button  id="LOGIN-BTN" class="login-btn" onclick="checkPassword()">Login</button>
-                <button type="submit" id="CANCEL-BTN" class="cancel-btn" onclick="closeForm()">Cancel</button>
-            </div>
         </div>
     </div>
 
