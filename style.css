@@ -24,7 +24,7 @@ header {
     width: 100vw;
     display: flex;
     background: var(--logoColor);
-    position: fixed;
+    position: sticky;
     top: 0;
 }
 .logoImg img {
@@ -41,7 +41,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 15vh;
     width: 100%;
 }
@@ -105,7 +105,7 @@ nav div{
     display: none;
 }
 #loadOnClick {
-    padding: 20vh 5vw;
+    padding: 5vh 5vw;
     line-height: 1.5;
     color: var(--logoColor);
 }
