@@ -18,6 +18,7 @@ body{
     font-family: sans-serif;
     overflow: auto;
     background: #111;
+    width: 100vw;
 }
 header {
     height: 15vh;
@@ -26,6 +27,7 @@ header {
     background: var(--logoColor);
     position: sticky;
     top: 0;
+    left: 0;
 }
 .logoImg img {
     height: 15vh;
@@ -43,7 +45,7 @@ nav {
     align-items: center;
     position: sticky;
     top: 15vh;
-    width: 100%;
+    width: 100vw;
 }
 .nav-links {
     display: flex;
