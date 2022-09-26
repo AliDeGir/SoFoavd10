@@ -163,6 +163,7 @@ ol {
     text-align: center;
     text-decoration: none;
     font-size: 1.5em;
+    color: var(--logoColor);
 }
 .card-container img {
     width: 40vw;
@@ -175,6 +176,9 @@ ol {
 .back a:hover {
     color: red;
     font-weight: 900;
+}
+.forbund a:hover {
+    color: darkorchid;
 }
 @media only screen and (max-width: 760px){
     nav{
