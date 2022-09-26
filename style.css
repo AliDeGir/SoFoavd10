@@ -93,14 +93,6 @@ nav div{
     right: -3vw;
     z-index: 9999;
 }
-.lang-hider {
-    width: 160px;
-    height: 20px;
-    background-color: var(--logoColor);
-    position: absolute;
-    top: 4px;
-    left: 139px;
-}
 .displayOnClick {
     display: none;
 }
@@ -245,6 +237,13 @@ ol {
     }
     .forbund a {
         font-size: 1.2em;
+    }
+    header {
+        width: 100vw;
+    }
+    #google_translate_element {
+        right: 14vw;
+        top: 10vh;
     }
 }
 
