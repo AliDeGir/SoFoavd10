@@ -17,7 +17,3 @@ function closeForm() {
 window.onbeforeunload = function() {
     window.scrollTo(0, 0);
 }
-function closeNavbar() {
-    const burger = document.querySelector(".burger");
-    burger.classList.toggle("toggle");
-}
