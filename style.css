@@ -41,7 +41,7 @@ header {
 #google_translate_element {
     /* width: 200px; */
     /* height: 30px; */
-    background-color: var(--logoColor);
+    /* background-color: var(--logoColor); */
     /* padding-left: 40vw; */
     padding-top: 5.5vh;
     /* position: fixed; */
@@ -185,6 +185,7 @@ ol {
         justify-content: space-around;
         width: 95vw;
         z-index: 44;
+        justify-content: end;
         /* padding: 0 5vw; */
     }
 
@@ -214,10 +215,6 @@ ol {
         display: block;
     }
 
-    .spacer {
-        min-width: 60vw;
-    }
-
     .card-container {
         flex-direction: column;
     }
@@ -227,8 +224,12 @@ ol {
 @media only screen and (max-width: 640px){
     nav{
         justify-content: space-around;
-        padding: 0 5vw;
+        /* padding: 0 5vw; */
+        width: 100vw;
+        z-index: 44;
+        justify-content: end;
     }
+    
 }
 
 .nav-active{
