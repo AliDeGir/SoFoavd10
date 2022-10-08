@@ -4,210 +4,187 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Closeup.jpg" sizes="32x32">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Closeup.JPG" sizes="32x32">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        function loadContent(selector){
-            $("#loadOnClick").html($(selector).html());
-        };
-        $(document).ready(function(){
-            loadContent("#Hjem");
-        });
-    </script>
-    
-    <title>SoFo avd 10</title>
+    <title>SoFe avd 10</title>
 </head>
 <body>
     <header>
-        <div class="logoImg">
-            <img src="SimpleSLogoSmall.JPG" alt="">
-        </div>
-        <div class="logoText">
-            <h1 class="notranslate">SoFe avd10</h1>
-        </div>
-        <div id="google_translate_element" class="lang-container"></div>
+        <img src="SimpleSLogoSmall.JPG" alt="">
+        <div class="logo">SoFe avd 10</div>
     </header>
-    <nav>
-        <ul class="nav-links"> 
-            <li><a href="#Hjem" class="quickLinks" onclick='loadContent("#Hjem")'>Hjem</a></li>
-		    <li><a href="#Nyheter" class="quickLinks" onclick='loadContent("#Nyheter")'>Nyheter</a></li>
-		    <li><a href="#Medlemskapsfordeler" class="quickLinks" onclick='loadContent("#Medlemskapsfordeler")'>Medlemskapsfordeler</a></li>
-		    <li><a href="#Avtaler" class="quickLinks" onclick='loadContent("#Avtaler")'>Riksavtalen</a></li>
-		    <li><a href="#Medlemmer" class="quickLinks" onclick='loadContent("#Medlemmer")'>Medlemmer</a></li>
-		    <li><a href="#Kontakt" class="quickLinks" onclick='loadContent("#Kontakt")'>Kontakt</a></li>
+    <div id="google_translate_element" class="lang-container"></div>
+    <nav class="nav-links">
+        <ul class="menu-links">
+            <li data-ref="DIV1">Hjem</li>
+            <li data-ref="DIV2">Nyheter</li>
+            <li data-ref="DIV3">Medlemskap</li>
+            <li data-ref="DIV4">Riksavtalen</li>
+            <li data-ref="DIV5">Medlemmer</li>
+            <li data-ref="DIV6">Kontakt</li>
         </ul>
-        <!-- <div class="spacer"></div> -->
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
     </nav>
-    
-    <div id="loadOnClick">
-
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
     </div>
-    <div id="Hjem" class="displayOnClick">
-        <h1>Velkommen</h1>
-        <h2>Vi må bli flere!</h2><br>
-        <ol>
-            <li>Det er antallet medlemmer som bestemmer fagbevegelsens innflytelse</li>
-            <li>Det er vi organiserte som oppretta velferdsstaten – og det er vi som må forsvare den</li>
-            <li>Fellesforbundet gir de organiserte på en arbeidsplass verktøyene til å sloss for bedre lønns- og arbeidsforhold</li>
-            <li>Over hundre års historie har vist oss at det er kun når vi står mange sammen vi kan greie å få vår rettmessige del av verdiene som skapes i bedriften og samfunnet</li>
-        </ol><br>
-        <p> 
-            Som fagorganisert i Fellesforbundet har du mange fordeler, både når det gjelder lønn, arbeidstid og andre sosiale forhold.
-            I tillegg får du gode forsikringer og andre gode medlemsfordeler f.eks. på leiebil, ferier/opplevelser, mobiltelefoni/bredbånd gjennom LOfavør.
-        </p><br>
-        <ol>
-            <li>Når vi forhandler sentralt må vi som regel forsvare alt det vi har før vi kan oppnå noe nytt</li>
-            <li>Med en tariffavtale begrenses arbeidsgivers mulighet til å diktere arbeidstid. Det er viktig at vi som jobber på bedriften er med å bestemme når og hvor lenge vi skal jobbe</li>
-            <li>Tariffavtalen gir deg en bedre pensjon gjennom AFP-ordningen. Det er kun når du jobber på bedrift med tariffavtale at du har krav på AFP</li>
-            <li>Alle er avhengige av hvilke resultater fagbevegelsen oppnår – også de som ikke er medlemmer. Hvis vi mister noe i tariffavtalene, mister de uorganiserte det samme. Derfor trenger vi et sterkt fellesskap av mange organiserte</li>
-            <li>Det er viktig å ha kontroll på minstelønna. Det har vi gjennom gode tariffavtaler og en sterk fagbevegelse. Hvis avstanden blir for stor mellom topp og bunn, betyr det at bedrifter med gode lønns- og arbeidsforhold vil tape</li>
-            <li>Med medlemmer og klubb på bedriften har vi gjennom Hovedavtalen og tariffavtalene krav på (og et rammeverk for) å komme i forhandlinger med ledelsen. På uorganiserte bedrifter har man ikke samme forhandlingsrett, noe som gir arbeidsgiver nesten total styringsrett. Klubb forutsetter medlemmer og tillitsvalgt, og det gir dere som arbeidstakere mulighet for makt som sjefen ellers sitter alene på.</li>
-            <li>Opparbeida rettigheter er ikke hugget i stein. Hvis det blir få eller ingen medlemmer på bedriften faller tariffavtalen bort sammen med alle rettighetene i den</li>
-        </ol>
-    </div>
-    
-    <div id="Nyheter" class="displayOnClick">
-        <h2>Nyheter:</h2><br>
-        <p class="newText">VIKTIG!</p>
-        <p class="newText">Sodexo har tilgang til både e-post og meldinger som er oppført på info plakaten. Ikke skriv sensitiv informasjon, bare ring.</p><br><br>
-        <p class="newText">Omsorgspermisjon: Hvis noen har fått avslag på betalt omsorgspermisjon med begrunnelse at arbeidstager ikke er folkeregistrert på samme addresse som mor, ta kontakt med oss!</p><br><br>
-        <h3>Lokale forhandlinger:</h3><br>
-        <p>08.06.2022: Medlemmenes krav: 6 kr/t for alle</p>
-        <p>09.09.2022: Tilbud fra bedriften: 1 kr/t for alle og + 1 kr/t(tot 3 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september. Vi har krav på virkning fra 1. juli.</p>
-        <p>18.09.2022: Medlemmenes krav: 3,50 kr/t for alle og + 4 kr/t(tot 7,50 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september, ikke fra 1. juli som vi har krav på.</p>
-        <p>23.09.2022: Tilbud fra bedriften: 1 kr/t for alle og +2 kr(tot 3 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september, ikke fra 1. juli som vi har krav på.</p><br>
-        <p>Min mening: Fortsatt for lavt så jeg stemmer for NEI.</p><br>
-        <p>Snakket med forbundet og de mener at vi burde presse på med tanke på at det ikke har vært en reel lokal lønnsforhandling på minst 6 år, om det i det hele tatt har vært tidligere. Forbundet mener vi har gode muligheter. Hvis det blir uenighet så tar foreningen over forhandlingene og de har bra erfaring på det.</p><br>
-        <p>26.09.2022: Tilbudet ble avslått med nytt krav på 1 kr/t til alle og +3 kr/t for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. juli</p><br>
-        <p>27.09.2022: Vi krevde 1 kr/t til alle og +3 kr/t for de som fikk laveste økning under sentrale oppgjøret i april. Gjeldende fra 1. juli. Har ikke fått offisiell avslag men ble hintet til at det blir vanskelig så da sender vi saken over til Fellesforbundet og de tar over forhandlingene.</p><br>
-        <p>Det står i Riksavtalen at lokale forhandlinger skal gjelde fra 1. juli så vi taper litt på å godta dette. Da må det kompanseres på en annen måte men tilbudet var for lavt.</p><br><br>
-        <p>Vi trenger flere medlemmer for å ha bedre posisjon i forhandlinger.</p><br>
-        <p>Jeg har fått tilbakemelding om at dagens kokkejakker er for varme og mangler ventilasjon. I noen få tilfeller har det forårsaket kløe og irritert hud. Er det flere som sliter med det, send en e-post eller SMS. Det kommer nye uniformer snart, så dersom vi får nye uniformer må du gi oss tilbakemelding så fort som mulig. Snakk også med kolleger om dette, også de som ikke er medlemmer.</p><br>
-        <p class="newText">Sist oppdatert: 30. sep 2022</p>
-    </div>
-    
-    <div id="Medlemskapsfordeler" class="displayOnClick">
-        <h2>Fellesforbundet medlemsfordeler:</h2><br>
-        <h3>Arbeidsgiver har retten til å si opp tariffavtalen hvis bedriften eller avdelingen har mindre enn 10% medlemmer i et fagforening!</h3><br>
-        <p>Under finner du en liste over forskjeller på med og uten tariffavtale:</p><br>
-        <div id="GRID" class="grid">
-            <div class="oneBYone"><p>Med tariffavtale</p></div>
-            <div class="oneBYtwo"><p>Uten tariffavtale</p></div>
-            <div class="twoBYone">Garantert, avtalefestet lønn (i henhold til tariffavtalen som forhandles hvert år). Rett til lokale forhandlinger.</div>
-            <div class="twoBYtwo">Ingen krav på tarifflønn, ingen minstelønn. Ingen rett til lokale forhandlinger</div>
-            <div class="threeBYone">37,5 timer eller mindre pr. uke. Bistand ved ufrivillig deltid eller brudd på lov eller avtale om arbeidstid</div>
-            <div class="threeBYtwo">9 timer eller mere pr. dag</div>
-            <div class="fourBYone">Minst 50 % og ofte 100 % overtidstillegg</div>
-            <div class="fourBYtwo">Kun 40 % overtidstillegg</div>
-            <div class="fiveBYone">Sikrer deg diverse tillegg som kvelds-, natt- og helgetillegg</div>
-            <div class="fiveBYtwo">Ingen tillegg som kvelds-, natt- og helgetillegg</div>
-            <div class="sixBYone">Folketrygdens bestemmelser og AFP-tillegg (avtalefestet pensjon)</div>
-            <div class="sixBYtwo">Ingen AFP-tillegg (avtalefestet pensjon)</div>
-            <div class="sevenBYone">5 uker ferie og 12 % feriepenger</div>
-            <div class="sevenBYtwo">10,2 % feriepenger</div>
-            <div class="eightBYone">Som partner har du rett til 14 dagers permisjon med lønn i forbindelse med fødsel/adopsjon</div>
-            <div class="eightBYtwo">Ingen krav på permisjon med lønn i forbindelse med fødsel/adopsjon som partner</div>
-            <div class="nineBYone">Får du problemer i ditt arbeidsforhold, kan det bli aktuelt å gå til domstolen. Gjennom ditt medlemskap kan du få gratis tilgang til landets beste jurister på arbeidsrettslige spørsmål (forutsetter at saken godkjennes av forbundet).</div>
-            <div class="nineBYtwo">Betale for advokat eller annet juridisk hjelp selv</div>
-        </div><br>
-        <h3>Forsikringsalternativer som tilbys av Fellesforbundet:</h3><br>
-        <ol>
-            <li>LOfavør Innboforsikring: En fullverdiforsikring av innbo og løsøre som også inkluderer ansvarsforsikring, rettshjelpsforsikring og forsikring av ditt innbo og løsøre. Forsikringen dekker ikke studentmedlemmer.</li>
-            <li>LOfavør Grunnforsikring: Denne forsikringen gir økonomisk ‘førstehjelp’ i form av engangsutbetaling når medlem, ektefelle/samboer eller barn dør. Forsikringen dekker ikke studentmedlemmer</li>
-            <li>LOfavør Ulykkesforsikring: Denne forsikringen gir økonomisk støtte ved dødsfall, uførhet og behandlingsutgifter som følge av en ulykke som har skjedd utenom arbeidstid. Alle medlemmer under 70 år er kvalifisert for denne forsikringen – med unntak av studentmedlemmer</li>
-        </ol><br>
-        <h3>Egenbetalingsforsikringer:</h3><br>
-        <ol>
-            <li>LOfavør Rettshjelpsforsikring: Alle faglig aktive medlemmer av Fellesforbundet er kvalifisert for denne ordningen fra 1. mai 2020. Forsikringen koster 71 kr/mnd. Forsikringen gjelder sentrale rettsområder i privatlivet, som familie og arv, kjøp av varer, husleie, nabotvister, forsikringskrav og inndragning av førerkort</li>
-            <li>LOfavør Travel Insurance: All members of Fellesforbundet are eligible for this insurance at NOK 95 a month. The insurance policy covers the whole family, 24 hours a day, globally. No excess or cancellation insurance is included</li>
-        </ol><br>
-        <h3>Støtte til videre/etterutdanning/opplæring:</h3><br>
-        <p>Er du medlem av Fellesforbundet (og ikke student) og har vært medlem de siste tre årene, vil du kunne søke støtte fra LOs utdanningsfond! Fondet gir støtte til helårs utdannings-/treningskurs samt til kortere kurs</p>
-    </div>
-    
-    <div id="Avtaler" class="displayOnClick">
-        <h2>Riksavtalen PDF:</h2>
-        <ol>
-            <li><a href="https://www.fellesforbundet.no/globalassets/in-english/collective-agreement-settlements/cas-2020/collective-agreement-for-the-building-industry-fob-20202022.pdf">Engelsk versjon PDF</a></li>
-            <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/tariffavtaler/overenskomster-2020-2022/riksavtalen-2020-2022.pdf">Norsk versjon PDF</a></li>
-            <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/tariffavtaler/bilagveileder/riksavtalens-satser-2022.pdf">Minstelønn satser fra 1. april 2022 PDF</a></li>
-            <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/hovedoppgjoret-2022---riksavtalen.pdf">Hovedoppgjøret april 2022</a></li>
-        </ol><br><br>
-        <h2>Utrolig viktig!</h2>
-        <p>Det er utrolig viktig at dere leser Riksavtalen. Har lagt til link for både norsk og engelsk versjon over. Hvis det er noe dere ikke forstår så er det bare å spørre. Husk at vi er her for å forsvare deres rettigheter i henhold til Riksavtalen. Vi som tillitsvalgte kan ikke vite hvilken av deres rettigheter som har blitt krenket hvis dere ikke gir beskjed til oss. Hvis dere selv ikke kjenner til punktene på Riksavtalen så blir det vanskelig for dere å vite om dere har fått det dere har krav på eller blir pålagt noe som dere ikke burde bli pålagt.</p>
-        <h2>Viktige punkter å være oppmerksom på:</h2>
-        <ol>
-            <li>Hva burde stå på kontrakten</li>
-            <li>Midlertidig overføring til annet arbeid eller avdeling</li>
-            <li>Overtid og når det er påbudt</li>
-            <li>Økning av arbeidsoppgaver uten kompensasjon eller reforhandling av lønn</li>
-        </ol>
-    </div>
-    
-    <div id="Medlemmer" class="displayOnClick">
-        <h2>Kun for medlemmer:</h2><br>
-        <p>Passord er 123. (Denne teksten skal fjernes etterhvert.)</p>
-        <div id="FORM-POPUP" class="form-popup">
-            <div class="form-container">
-                <h1>Login</h1>
-                <input type="password" id="PASSWORD" class="password" value="" onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
-                <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
-                <button  id="LOGIN-BTN" class="login-btn" onclick="checkPassword()">Login</button>
-                <button type="submit" id="CANCEL-BTN" class="cancel-btn" onclick="closeForm()">Cancel</button>
-            </div>
-        </div>
-        <div class="hidden" id="HIDDEN-CONTAINER">
-            <h3>Viktig!</h3><br>
+    <div class="mainDiv">
+        <div id="DIV1" class="active">
+            <h1>Velkommen</h1><br>
+            <h2>Vi må bli flere medlemmer</h2><br>
             <ol>
-                <li>Ikke signer på dokumenter som du ikke forstår helt, ring og spør.</li>
-                <li>Ikke godta møter med HR alene.</li><br>
-                <li>Det er din rett å be om bistand og det er brudd på arbeidsmiljøloven å forhindre det. Vær høflig å si at du ikke helt forstår og vil rådføre deg med tillitsvalgt. Hvis det haster, ring oss eller send en melding så svarer vi i løpet av arbeidsdagen mellom 08:00 og 16:00. Det er vår jobb som tillitsvalgte å svare på dine spørsmål og bistå deg hvis du trenger det. Derfor betaler du kontingent til forbundet.</li><br>
-                <li>Dersom du blir innkalt til møte med HR, ha innkallingen klar til å sende oss på melding eller e-post.</li>
-                <li>Trenger du bistand til arbeidskontrakt, ha en kopi klar til å sende til oss på melding eller e-post.</li>
-                <li>Trenger du bistand til arbeidstid, ha kopi av timeplanen for den aktuelle perioden klar til å sende oss på melding eller e-post.</li>
-                <li>Trenger du bistand til lønn, ha kopi av lønnsslipp for den aktuelle perioden klar til å sende oss på melding eller epost.</li><br>
-                <li>Hvis du ikke har fått lønnsøkning og etterbetaling fra april/mai, send meg en mail/sms.</li>
-                <li>Blir du trekt for kost under ferier og sykemeldinger, send meg en e-post/sms.</li>
+                <li>Det er antallet medlemmer som bestemmer fagbevegelsens innflytelse</li>
+                <li>Det er vi organiserte som oppretta velferdsstaten – og det er vi som må forsvare den</li>
+                <li>Fellesforbundet gir de organiserte på en arbeidsplass verktøyene til å sloss for bedre lønns- og arbeidsforhold</li>
+                <li>Over hundre års historie har vist oss at det er kun når vi står mange sammen vi kan greie å få vår rettmessige del av verdiene som skapes i bedriften og samfunnet</li>
+            </ol><br>
+            <p> 
+                Som fagorganisert i Fellesforbundet har du mange fordeler, både når det gjelder lønn, arbeidstid og andre sosiale forhold.
+                I tillegg får du gode forsikringer og andre gode medlemsfordeler f.eks. på leiebil, ferier/opplevelser, mobiltelefoni/bredbånd gjennom LOfavør.
+            </p><br>
+            <ol>
+                <li>Når vi forhandler sentralt må vi som regel forsvare alt det vi har før vi kan oppnå noe nytt</li>
+                <li>Med en tariffavtale begrenses arbeidsgivers mulighet til å diktere arbeidstid. Det er viktig at vi som jobber på bedriften er med å bestemme når og hvor lenge vi skal jobbe</li>
+                <li>Tariffavtalen gir deg en bedre pensjon gjennom AFP-ordningen. Det er kun når du jobber på bedrift med tariffavtale at du har krav på AFP</li>
+                <li>Alle er avhengige av hvilke resultater fagbevegelsen oppnår – også de som ikke er medlemmer. Hvis vi mister noe i tariffavtalene, mister de uorganiserte det samme. Derfor trenger vi et sterkt fellesskap av mange organiserte</li>
+                <li>Det er viktig å ha kontroll på minstelønna. Det har vi gjennom gode tariffavtaler og en sterk fagbevegelse. Hvis avstanden blir for stor mellom topp og bunn, betyr det at bedrifter med gode lønns- og arbeidsforhold vil tape</li>
+                <li>Med medlemmer og klubb på bedriften har vi gjennom Hovedavtalen og tariffavtalene krav på (og et rammeverk for) å komme i forhandlinger med ledelsen. På uorganiserte bedrifter har man ikke samme forhandlingsrett, noe som gir arbeidsgiver nesten total styringsrett. Klubb forutsetter medlemmer og tillitsvalgt, og det gir dere som arbeidstakere mulighet for makt som sjefen ellers sitter alene på.</li>
+                <li>Opparbeida rettigheter er ikke hugget i stein. Hvis det blir få eller ingen medlemmer på bedriften faller tariffavtalen bort sammen med alle rettighetene i den</li>
+            </ol><br>
+        </div>
+        <div id="DIV2">
+            <h2>Nyheter:</h2><br>
+            <p class="newText">VIKTIG!</p>
+            <p class="newText">Sodexo har tilgang til både e-post og meldinger som er oppført på info plakaten. Ikke skriv sensitiv informasjon, bare ring.</p><br><br>
+            <p class="newText">Omsorgspermisjon: Hvis noen har fått avslag på betalt omsorgspermisjon med begrunnelse at arbeidstager ikke er folkeregistrert på samme addresse som mor, ta kontakt med oss!</p><br><br>
+            <h3>Lokale forhandlinger:</h3><br>
+            <p>08.06.2022: Medlemmenes krav: 6 kr/t for alle</p>
+            <p>09.09.2022: Tilbud fra bedriften: 1 kr/t for alle og + 1 kr/t(tot 3 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september. Vi har krav på virkning fra 1. juli.</p>
+            <p>18.09.2022: Medlemmenes krav: 3,50 kr/t for alle og + 4 kr/t(tot 7,50 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september, ikke fra 1. juli som vi har krav på.</p>
+            <p>23.09.2022: Tilbud fra bedriften: 1 kr/t for alle og +2 kr(tot 3 kr/t) for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. september, ikke fra 1. juli som vi har krav på.</p><br>
+            <p>26.09.2022: Tilbudet ble avslått med nytt krav på 1 kr/t til alle og +3 kr/t for de som fikk laveste økning under sentrale oppgjøret i april. Med virkning fra 1. juli</p><br>
+            <p>27.09.2022: Vi krevde 1 kr/t til alle og +3 kr/t for de som fikk laveste økning under sentrale oppgjøret i april. Gjeldende fra 1. juli. Har ikke fått offisiell avslag men ble hintet til at det blir vanskelig så da sender vi saken over til Fellesforbundet og de tar over forhandlingene.</p><br>
+            <p>30.09.2022: Brudd på forhandlinger og Forbundet tar over forhandlingene.</p>
+            <p>Det står i Riksavtalen at lokale forhandlinger skal gjelde fra 1. juli så vi taper litt på å godta dette. Da må det kompanseres på en annen måte men tilbudet var for lavt.</p><br><br>
+            <p>Vi trenger flere medlemmer for å ha bedre posisjon i forhandlinger.</p><br>
+            <p>Jeg har fått tilbakemelding om at dagens kokkejakker er for varme og mangler ventilasjon. I noen få tilfeller har det forårsaket kløe og irritert hud. Er det flere som sliter med det, send en e-post eller SMS. Det kommer nye uniformer snart, så dersom vi får nye uniformer må du gi oss tilbakemelding så fort som mulig. Snakk også med kolleger om dette, også de som ikke er medlemmer.</p><br>
+            <p class="newText">Sist oppdatert: 30. sep 2022</p>
+        </div>
+        <div id="DIV3">
+            <h2>Fellesforbundet medlemsfordeler:</h2><br>
+            <h3>Arbeidsgiver har retten til å si opp tariffavtalen hvis bedriften eller avdelingen har mindre enn 10% medlemmer i et fagforening!</h3><br>
+            <p>Under finner du en liste over forskjeller på med og uten tariffavtale:</p><br>
+            <div id="GRID" class="grid">
+                <div class="oneBYone"><p>Med tariffavtale</p></div>
+                <div class="oneBYtwo"><p>Uten tariffavtale</p></div>
+                <div class="twoBYone">Garantert, avtalefestet lønn (i henhold til tariffavtalen som forhandles hvert år). Rett til lokale forhandlinger.</div>
+                <div class="twoBYtwo">Ingen krav på tarifflønn, ingen minstelønn. Ingen rett til lokale forhandlinger</div>
+                <div class="threeBYone">37,5 timer eller mindre pr. uke. Bistand ved ufrivillig deltid eller brudd på lov eller avtale om arbeidstid</div>
+                <div class="threeBYtwo">9 timer eller mere pr. dag</div>
+                <div class="fourBYone">Minst 50 % og ofte 100 % overtidstillegg</div>
+                <div class="fourBYtwo">Kun 40 % overtidstillegg</div>
+                <div class="fiveBYone">Sikrer deg diverse tillegg som kvelds-, natt- og helgetillegg</div>
+                <div class="fiveBYtwo">Ingen tillegg som kvelds-, natt- og helgetillegg</div>
+                <div class="sixBYone">Folketrygdens bestemmelser og AFP-tillegg (avtalefestet pensjon)</div>
+                <div class="sixBYtwo">Ingen AFP-tillegg (avtalefestet pensjon)</div>
+                <div class="sevenBYone">5 uker ferie og 12 % feriepenger</div>
+                <div class="sevenBYtwo">10,2 % feriepenger</div>
+                <div class="eightBYone">Som partner har du rett til 14 dagers permisjon med lønn i forbindelse med fødsel/adopsjon</div>
+                <div class="eightBYtwo">Ingen krav på permisjon med lønn i forbindelse med fødsel/adopsjon som partner</div>
+                <div class="nineBYone">Får du problemer i ditt arbeidsforhold, kan det bli aktuelt å gå til domstolen. Gjennom ditt medlemskap kan du få gratis tilgang til landets beste jurister på arbeidsrettslige spørsmål (forutsetter at saken godkjennes av forbundet).</div>
+                <div class="nineBYtwo">Betale for advokat eller annet juridisk hjelp selv</div>
+            </div><br>
+            <h3>Forsikringsalternativer som tilbys av Fellesforbundet:</h3><br>
+            <ol>
+                <li>LOfavør Innboforsikring: En fullverdiforsikring av innbo og løsøre som også inkluderer ansvarsforsikring, rettshjelpsforsikring og forsikring av ditt innbo og løsøre. Forsikringen dekker ikke studentmedlemmer.</li>
+                <li>LOfavør Grunnforsikring: Denne forsikringen gir økonomisk ‘førstehjelp’ i form av engangsutbetaling når medlem, ektefelle/samboer eller barn dør. Forsikringen dekker ikke studentmedlemmer</li>
+                <li>LOfavør Ulykkesforsikring: Denne forsikringen gir økonomisk støtte ved dødsfall, uførhet og behandlingsutgifter som følge av en ulykke som har skjedd utenom arbeidstid. Alle medlemmer under 70 år er kvalifisert for denne forsikringen – med unntak av studentmedlemmer</li>
+            </ol><br>
+            <h3>Egenbetalingsforsikringer:</h3><br>
+            <ol>
+                <li>LOfavør Rettshjelpsforsikring: Alle faglig aktive medlemmer av Fellesforbundet er kvalifisert for denne ordningen fra 1. mai 2020. Forsikringen koster 71 kr/mnd. Forsikringen gjelder sentrale rettsområder i privatlivet, som familie og arv, kjøp av varer, husleie, nabotvister, forsikringskrav og inndragning av førerkort</li>
+                <li>LOfavør Travel Insurance: All members of Fellesforbundet are eligible for this insurance at NOK 95 a month. The insurance policy covers the whole family, 24 hours a day, globally. No excess or cancellation insurance is included</li>
+            </ol><br>
+            <h3>Støtte til videre/etterutdanning/opplæring:</h3><br>
+            <p>Er du medlem av Fellesforbundet (og ikke student) og har vært medlem de siste tre årene, vil du kunne søke støtte fra LOs utdanningsfond! Fondet gir støtte til helårs utdannings-/treningskurs samt til kortere kurs.</p>
+        </div>
+        <div id="DIV4">
+            <h2>Riksavtalen PDF:</h2>
+            <ol>
+                <li><a href="https://www.fellesforbundet.no/globalassets/in-english/collective-agreement-settlements/cas-2020/collective-agreement-for-the-building-industry-fob-20202022.pdf">Engelsk versjon PDF</a></li>
+                <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/tariffavtaler/overenskomster-2020-2022/riksavtalen-2020-2022.pdf">Norsk versjon PDF</a></li>
+                <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/tariffavtaler/bilagveileder/riksavtalens-satser-2022.pdf">Minstelønn satser fra 1. april 2022 PDF</a></li>
+                <li><a href="https://www.fellesforbundet.no/globalassets/lonn-og-tariffsaker/hovedoppgjoret-2022---riksavtalen.pdf">Hovedoppgjøret april 2022</a></li>
+            </ol><br><br>
+            <h2>Utrolig viktig!</h2><br>
+            <p>Det er utrolig viktig at dere leser Riksavtalen. Har lagt til link for både norsk og engelsk versjon over. Hvis det er noe dere ikke forstår så er det bare å spørre. Husk at vi er her for å forsvare deres rettigheter i henhold til Riksavtalen. Vi som tillitsvalgte kan ikke vite hvilken av deres rettigheter som har blitt krenket hvis dere ikke gir beskjed til oss. Hvis dere selv ikke kjenner til punktene på Riksavtalen så blir det vanskelig for dere å vite om dere har fått det dere har krav på eller blir pålagt noe som dere ikke burde bli pålagt.</p><br>
+            <h2>Viktige punkter å være oppmerksom på:</h2><br>
+            <ol>
+                <li>Hva burde stå på kontrakten</li>
+                <li>Midlertidig overføring til annet arbeid eller avdeling</li>
+                <li>Overtid og når det er påbudt</li>
+                <li>Økning av arbeidsoppgaver uten kompensasjon eller reforhandling av lønn</li>
             </ol>
         </div>
-    </div>
-
-    <div id="Kontakt" class="displayOnClick">
-        <h2>Kontakt:</h2><br>
-        <div class="card-container">
-            <div class="container-1">
-                <div class="front"><img src="Ali.JPG" alt=""></div>
-                <div class="back">
-                    <h2 class="notranslate">Ali Degirmenci</h2>
-                    <p>Hoved Tillitsvalgt avd 10</p><br>
-                    <p><a href="tel:90401253">Ring meg</a></p><br>
-                    <p><a href="mailto:tillitsvalgte.no@sodexo.com">E-post</a></p>
+        <div id="DIV5">
+            <h2>Kun for medlemmer:</h2><br>
+            <p>Passord er 123. (Denne teksten skal fjernes etterhvert.)</p>
+            <div id="FORM-POPUP" class="form-popup">
+                <div class="form-container">
+                    <h1>Login</h1>
+                    <input type="password" id="PASSWORD" class="password" value="" onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
+                    <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
+                    <button  id="LOGIN-BTN" class="login-btn" onclick="checkPassword()">Login</button>
+                    <button type="submit" id="CANCEL-BTN" class="cancel-btn" onclick="closeForm()">Cancel</button>
                 </div>
             </div>
-
-            <div class="container-2">
-                <div class="front"><img src="Marina.JPG" alt=""></div>
-                <div class="back">
-                    <h2 class="notranslate">Marina Fedjajeva</h2>
-                    <p>Tillitsvalgt avd 10</p><br>
-                    <p><a href="tel:+4741321690">Ring meg</a></p><br>
-                    <p><a href="mailto:tillitsvalgte.no@sodexo.com">E-post</a></p>
-                </div>
+            <div class="hidden" id="HIDDEN-CONTAINER">
+                <h3>Viktig!</h3><br>
+                <ol>
+                    <li>Ikke signer på dokumenter som du ikke forstår helt, ring og spør.</li>
+                    <li>Ikke godta møter med HR alene.</li><br>
+                    <li>Det er din rett å be om bistand og det er brudd på arbeidsmiljøloven å forhindre det. Vær høflig å si at du ikke helt forstår og vil rådføre deg med tillitsvalgt. Hvis det haster, ring oss eller send en melding så svarer vi i løpet av arbeidsdagen mellom 08:00 og 16:00. Det er vår jobb som tillitsvalgte å svare på dine spørsmål og bistå deg hvis du trenger det. Derfor betaler du kontingent til forbundet.</li><br>
+                    <li>Dersom du blir innkalt til møte med HR, ha innkallingen klar til å sende oss på melding eller e-post.</li>
+                    <li>Trenger du bistand til arbeidskontrakt, ha en kopi klar til å sende til oss på melding eller e-post.</li>
+                    <li>Trenger du bistand til arbeidstid, ha kopi av timeplanen for den aktuelle perioden klar til å sende oss på melding eller e-post.</li>
+                    <li>Trenger du bistand til lønn, ha kopi av lønnsslipp for den aktuelle perioden klar til å sende oss på melding eller epost.</li><br>
+                    <li>Hvis du ikke har fått lønnsøkning og etterbetaling fra april/mai, send meg en mail/sms.</li>
+                    <li>Blir du trekt for kost under ferier og sykemeldinger, send meg en e-post/sms.</li>
+                </ol>
             </div>
         </div>
-        <div class="forbund">
-            <a href="tel:+4723061785">Ring til Fellesforbundet avd 10</a><br>
-            <a href="mailto:avd10@fellesforbundet.org">Send mail til Fellesforbundet avd 10</a>
+        <div id="DIV6">
+            <h1>Kontakt Oss</h1><br>
+            <div class="card-container">
+                <div class="card-1">
+                    <div class="contact-img">
+                        <img src="Ali.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2 class="notranslate">Ali Degirmenci</h2>
+                        <p>Hoved tillitsvalgt</p><br>
+                        <p><a href="tel:90401253">Ring meg</a></p><br>
+                        <p><a href="mailto:tillitsvalgte.no@sodexo.com">E-post</a></p>
+                    </div>
+                </div>
+                <div class="card-2">
+                    <div class="contact-img">
+                        <img src="Marina.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2 class="notranslate"></h2>>Marina Fedjajeva</h2>
+                        <p>Tillitsvalgt</p><br>
+                        <p><a href="tel:+4741321690">Ring meg</a></p><br>
+                        <p><a href="mailto:tillitsvalgte.no@sodexo.com">E-post</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="forbund">
+                <a href="tel:+4723061785">Ring Fellesforbundet avd 10</a><br>
+                <a href="mailto:avd10@fellesforbundet.org">Send mail til Fellesforbundet avd 10</a>
+            </div>
         </div>
-    </div>
     <script type="text/javascript"> 
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'no'}, 'google_translate_element');
@@ -215,6 +192,5 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="app1.js"></script>
-    <script src="app2.js"></script>
 </body>
 </html>
