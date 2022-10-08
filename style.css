@@ -139,6 +139,20 @@ ol {
 .text a:hover {
     color: red;
 }
+.avtaler a {
+    text-decoration: none;
+    color: #38b8ff;
+}
+.avtaler a:hover {
+    color: red;
+}
+.loFav a {
+    text-decoration: none;
+    color: #38b8ff;
+}
+.loFav a:hover {
+    color: red;
+}
 .card-container img {
     width: 350px;
     height: 450px;
