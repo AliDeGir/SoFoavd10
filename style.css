@@ -160,11 +160,15 @@ ol {
 .forbund {
     display: flex;
     flex-direction: column;
+    padding-top: 5vh;
 }
 .forbund a {
     text-align: center;
     text-decoration: none;
-    color: var(--col-8);
+    color: #38b8ff;
+}
+.forbund a:hover {
+    color: red;
 }
 .newText {
     color: red;
