@@ -156,6 +156,7 @@ ol {
 .card-container img {
     width: 350px;
     height: 450px;
+    border-radius: 10px;
 }
 .forbund {
     display: flex;
