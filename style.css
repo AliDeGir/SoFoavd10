@@ -28,7 +28,7 @@ header {
     top: 0;
 }
 header > img {
-    height: 8vh;
+    height: 12vh;
 }
 .logo {
     font-size: 2rem;
@@ -155,7 +155,7 @@ ol {
 }
 .card-container img {
     width: 350px;
-    height: 450px;
+    height: 400px;
     border-radius: 10px;
 }
 .forbund {
@@ -206,7 +206,8 @@ ol {
         flex-direction: column;
     }
     .card-1,
-    .card-2 {
+    .card-2,
+    .card-3 {
         padding-top: 4vh;
     }
     .forbund {
