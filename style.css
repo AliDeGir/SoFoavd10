@@ -153,6 +153,12 @@ ol {
 .loFav a:hover {
     color: red;
 }
+
+.slipp-img img {
+    width: 20vw;
+    height: 40vh;
+}
+
 .card-container img {
     width: 350px;
     height: 400px;
