@@ -10,14 +10,17 @@
     --col-11: #fff;
     --col-12: #111;
 }
+
 * {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
+
 body {
     background: var(--col-12);
 }
+
 header {
     width: 100vw;
     height: 12vh;
@@ -27,24 +30,29 @@ header {
     position: sticky;
     top: 0;
 }
+
 header > img {
     height: 12vh;
 }
+
 .logo {
     font-size: 2rem;
     padding-left: 3vw;
     font-weight: 800;
     color: var(--col-7);
 }
+
 .lang-container {
     position: fixed;
     top: 5vh;
     right: 3vw;
 }
+
 .nav-links {
     position: sticky;
     top: 12vh;
 }
+
 .nav-links > ul {
     display: flex;
     background: var(--col-10);
@@ -55,14 +63,17 @@ header > img {
     color: var(--col-6);
     text-transform: uppercase;
 }
+
 .nav-links li {
     cursor: pointer;
 }
+
 .nav-links li:hover{
     color: #38b8ff;
     letter-spacing: .5vw;
     font-weight: 800;
 }
+
 .mainDiv > div {
     display: none;
     padding: 3vw;
@@ -72,9 +83,11 @@ header > img {
     min-height: 100vh;
     /* width: 100%; */
 }
+
 .mainDiv > div.active {
     display: block;
 }
+
 .burger {
     background: var(--col-10);
     position: fixed;
@@ -84,6 +97,7 @@ header > img {
     cursor: pointer;
     /* z-index: 333; */
 }
+
 .burger div{
     width: 25px;
     height: 3px;
@@ -91,65 +105,82 @@ header > img {
     margin: 5px;
     transition:all 0.5s ease;
 }
+
 .toggle .line1{
     transform: rotate(-405deg) translate(-5px,6px );
 }
+
 .toggle .line2{
     opacity: 0;
 }
+
 .toggle .line3{
     transform: rotate(405deg) translate(-5px,-6px );
 }
+
 .nav-active{
     transform: translateX(0%);
 }
+
 ol {
     list-style: circle;
     padding-left: 3vw;
 }
+
 .hidden {
     display: none;
 }
+
 #GRID {
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
 .grid div {
     border: 1px solid var(--logoColor);
     padding: 1vh 1vw;
 }
+
 .oneBYone, .oneBYtwo {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
 }
+
 .card-container {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-around;
 }
+
 .text {
     text-align: center;
 }
+
 .text a {
     text-decoration: none;
     color: var(--col-2);
 }
+
 .text a:hover {
     color: red;
 }
+
 .avtaler a {
     text-decoration: none;
     color: #38b8ff;
 }
+
 .avtaler a:hover {
     color: red;
 }
+
 .loFav a {
     text-decoration: none;
     color: #38b8ff;
 }
+
 .loFav a:hover {
     color: red;
 }
