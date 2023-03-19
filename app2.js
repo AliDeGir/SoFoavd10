@@ -19,6 +19,7 @@ window.onbeforeunload = function() {
 }
 const imgs = document.querySelectorAll('.slipp-img img');
 const fullPage = document.querySelector('#fullpage');
+const mainPage = document.querySelector('.mainDiv');
 
 imgs.forEach(img => {
   img.addEventListener('click', function() {
