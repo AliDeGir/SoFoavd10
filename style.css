@@ -51,6 +51,7 @@ header > img {
 .nav-links {
     position: sticky;
     top: 12vh;
+    width: 100vw;
 }
 
 .nav-links > ul {
