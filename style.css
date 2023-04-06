@@ -177,18 +177,33 @@ ol {
     color: red;
 }
 
-.loFav a {
+.links a {
     text-decoration: none;
     color: #38b8ff;
 }
 
-.loFav a:hover {
+.links a:hover {
     color: red;
 }
 
 .slipp-img img {
     width: 20vw;
     height: 40vh;
+}
+
+.homeImageSpan {
+    margin-right: 200px;
+}
+
+.newDivHomeSpanImg {
+    display: flex;
+    align-items: center;
+}
+
+.newDivHomeSpanImg img {
+    width: 300px;
+    height: 250px;
+    margin-right: 100px;
 }
 
 .card-container img {
