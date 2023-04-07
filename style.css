@@ -278,6 +278,9 @@ ol {
     .homeImageSpan {
         margin-right: 50px;
     }
+    .newDivHomeSpanImg {
+        display: block;
+    }
     .newDivHomeSpanImg img {
         width: 200px;
     }
