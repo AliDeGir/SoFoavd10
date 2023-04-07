@@ -275,6 +275,12 @@ ol {
     .burger {
         display: block;
     }
+    .homeImageSpan {
+        margin-right: 50px;
+    }
+    .newDivHomeSpanImg img {
+        width: 200px;
+    }
     .card-container {
         flex-direction: column;
     }
@@ -290,6 +296,7 @@ ol {
         font-size: .8em;
     }
 }
+
 #fullpage {
     display: none;
     position: absolute;
