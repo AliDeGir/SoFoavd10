@@ -32,15 +32,29 @@ header {
     justify-content: space-between;
 }
 
-header > img {
+/* header > img {
     height: 12vh;
-}
+} */
 
 .logo {
     font-size: 3rem;
     padding-left: 3vw;
     font-weight: 800;
     color: var(--col-7);
+}
+
+.becomeMemberButton {
+    cursor: pointer;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: red;
+    color: #fff;
+}
+
+.becomeMemberButton:hover {
+    background-color: rgb(0, 255, 38);
 }
 
 .lang-container {
@@ -255,9 +269,14 @@ ol {
 }
 @media only screen and (max-width: 640px) {
     .logo {
-        padding-left: 0;
-        font-size: 1em;
+        padding-left: 1vw;
+        font-size: 1.5em;
         font-weight: 700;
+        width: 25vw;
+    }
+    .becomeMemberButton {
+        width: 18vw;
+        font-size: .7rem;
     }
     nav {
         transform: translateX(100%);
