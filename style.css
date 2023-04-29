@@ -27,8 +27,9 @@ header {
     display: flex;
     align-items: center;
     background: var(--logoColor);
-    position: sticky;
+    position: fixed;
     top: 0;
+    justify-content: space-between;
 }
 
 header > img {
@@ -36,20 +37,18 @@ header > img {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 3rem;
     padding-left: 3vw;
     font-weight: 800;
     color: var(--col-7);
 }
 
 .lang-container {
-    position: fixed;
-    top: 5vh;
-    right: 3vw;
+    padding-right: 3vw;
 }
 
 .nav-links {
-    position: sticky;
+    position: fixed;
     top: 12vh;
     width: 100vw;
 }
@@ -73,6 +72,10 @@ header > img {
     color: #38b8ff;
     letter-spacing: .5vw;
     font-weight: 800;
+}
+
+.mainDiv {
+    padding-top: 12vh;
 }
 
 .mainDiv > div {
