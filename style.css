@@ -47,7 +47,7 @@ header {
     cursor: pointer;
     width: 10vw;
     height: 5vh;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     border-radius: 10px;
     background-color: red;
     color: #fff;
@@ -267,6 +267,15 @@ ol {
 .list {
     padding-left: 3vw;
 }
+footer {
+    width: 100vw;
+    height: 3vh;
+    background-color: var(--logoColor);
+    color: var(--col-7);
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
 @media only screen and (max-width: 640px) {
     .logo {
         padding-left: 1vw;
@@ -276,7 +285,6 @@ ol {
     }
     .becomeMemberButton {
         width: 18vw;
-        font-size: .7rem;
     }
     nav {
         transform: translateX(100%);
