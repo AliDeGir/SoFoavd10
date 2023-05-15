@@ -269,7 +269,7 @@ ol {
 }
 footer {
     width: 100vw;
-    height: 3vh;
+    height: 2.5vh;
     background-color: var(--logoColor);
     color: var(--col-7);
     position: fixed;
