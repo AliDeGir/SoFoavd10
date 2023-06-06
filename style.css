@@ -284,6 +284,7 @@ footer {
     }
     .becomeMemberButton {
         width: 18vw;
+        font-size: 3vw;
     }
     nav {
         transform: translateX(100%);
