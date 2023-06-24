@@ -28,7 +28,7 @@
         <ul class="menu-links">
             <li data-ref="DIV1">Hjem</li>
             <li data-ref="DIV2">Nyheter</li>
-            <li data-ref="DIV3">Medlemskap</li>
+            <li data-ref="DIV3">Tariff fordeler</li>
             <li data-ref="DIV4">Riksavtalen</li>
             <li data-ref="DIV5">Medlemmer</li>
             <li data-ref="DIV6">Kontakt</li>
@@ -63,16 +63,16 @@
                 Ditt arbeidsforhold er like viktig som leilighet, bil eller helse.
                 Å blir medlem i et fagforening, er å forsikre ditt arbeidsforhold. Det sikrer din jobb og sørger for at du får bedre arbeidsforhold. Ikke vent forsikre din leiligeht til det blir innbrudd eller brann.
                 Ikke vent med å forsikre din bil den blir stjålet eller utsatt for ulykke.<br><br>
-                IKKE VENT MED Å FORSIKRE DITT ARBEIDSFORHOLD TIL DU BLIR PERMITTERT VED NEDBEMANNING ELLER OPPSAGT!<br>
+                IKKE VENT MED Å FORSIKRE DITT ARBEIDSFORHOLD TIL DU BLIR PERMITTERT VED NEDBEMANNING ELLER OPPSAGT!<br><br>
                 Da kan det allerede være for sent.
-                Med forsikring på ditt arbeidsforhold, har du et forutsigbar økonomi og sover du mye bedre på nettene. Bli medlem nå!
+                Med forsikring på ditt arbeidsforhold, har du et forutsigbar økonomi og sover mye bedre på nettene. Bli medlem nå!
             </p><br>
 
             <p>
                 For inntektsåret 2023 kan du trekke fra inntil 7 700 kroner.
                 Har du betalt fagforeningskontingent for en del av året, reduseres maksimumsbeløpet forholdsmessig.
                 Det er nesten gratis å være medlem samtidig som du bidrar til ditt eget lønnsøkning så du vil tjene på det i lengden.
-                Vil du ha mere i lønn, bli medlem!
+                Vil du hjelpe deg selv med å prøve å øke din lønn? Bli medlem!
             </p><br>
 
             <p>
@@ -220,7 +220,7 @@
             <hr><br><br>
             
             <h3>Login for medlemmer</h3><br>
-            <p>Saker som handler om medlemmer har blitt flyttet. Trykk på "Medlemmer" på meny, tast inn passord for å logg inn. Da får dere tilgang til teksten.</p><br>
+            <p>Saker som handler om medlemmer har blitt flyttet. Trykk på "Medlemmer" på meny, tast inn medlemsnummer fra Fellesforbundet for å logg inn. Da får dere tilgang til teksten.</p><br>
             <hr><br><br>
             
             <h3>Kontakt med tillitsvalgte</h3><br>
@@ -341,7 +341,10 @@
 
             <h2>Kun for medlemmer:</h2><br>
 
-            <p><i>Tast inn passord for å få tilgang til tekst.</i></p><br>
+            <p id="LOGIN-INFO"><i>
+                Tast inn medlemsnummer fra Fellesforbundet for å få tilgang til tekst.<br>
+                Hvis du ikke vet medlemsnummeret ditt, send melding til tillitsvalgte.
+            </i></p><br>
 
             <div id="FORM-POPUP" class="form-popup">
 
@@ -349,10 +352,11 @@
 
                     <h1>Login</h1>
 
-                    <input type="password" id="PASSWORD" class="password" value="" onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
+                    <input type="text" class="user-input" id="USER-INPUT" placeholder="Brukernavn">
+                    <input type="password" id="PASSWORD-INPUT" class="password" value="" placeholder="Medlemsnummer" onkeydown="if(event.keyCode == 13) document.getElementById('TEST-BTN').click()">
                     <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
-                    <button  id="LOGIN-BTN" class="login-btn" onclick="checkPassword()">Login</button>
-                    <button type="submit" id="CANCEL-BTN" class="cancel-btn" onclick="closeForm()">Cancel</button>
+                    
+                    <button id="TEST-BTN" onclick="testingPass()">LOGIN</button>
 
                 </div>
 
@@ -360,11 +364,26 @@
 
             <div class="hidden" id="HIDDEN-CONTAINER">
 
+                <h3>Sommerferie</h3><br>
+
+                <p>
+                    Kjære medlemmer!<br>
+                    Da er tiden for sommerferie rett rundt hjørnet. For enkelte har den allerede begynt.
+                    Klubben ønsker med dette å påminne medlemmer om at hvis dere skal være borte lenger enn 1 måned, gi beskjed til tillitsvalgte eller Felelsforbundet avd 10.
+                    Hvis medlemskontigentet ikke blir betalt i 2 måneder, blir medlemskap kansellert sammen med alle forsikringer.<br><br>
+                    Nå kan du kjøpe LOfavør Reiseforsikring til medlemspris.<br>
+                    Forsikringen koster 99 kroner i måneden for familie og 72 kroner i måneden for enslige medlemmer under 67 år.<br>
+                    Forsikringen gjelder alle typer reiser i hele døgnet og i hele verden, fra det øyeblikket du forlater hjemmet ditt. Du er forsikret på alt fra lange feriereiser til småturer i hverdagen – enten du skal en tur til fjells, ut i skjærgården eller bare til butikken.<br><br>
+                    <a href="https://www.lofavor.no/forsikring/lofavor-reiseforsikring">Les mer om forsikringen her</a>
+                </p><br><br>
+
+                <hr><br><br>
+
                 <h3>** Lokale lønnsforhandlinger 2023 **</h3><br>
 
                 <p>
                     Hei kjære medlemmer.<br>
-                    Vi har nå startet lønnsforhandlingene på fredag 2. juni og den fortsetter neste uke.<br><br>
+                    Lønnsforhandlingene er nå avsluttet!<br><br>
                     På årsmøte i februar 2023 ble vi enig om at vi skal kreve 4 kr per time lønnstillegg men dette var da før sentrale lønnsoppgjør var klar.<br>
                     Under sentrale oppgjør fikk vi 10,50 kr per time til alle så det kan bli vanskelig å få 4 kr i tillegg til 10,50 kr, bare dere har det i bakhodet.<br>
                     Hvis dere står fast på kravet 4 kr per time så kan vi risikere å ikke bli enige da arbeidsgiver mener 10,50 kr per time er allerede ganske bra økning.<br><br>
@@ -374,7 +393,7 @@
                     <b>Tenk godt og svar meg senest mandag kveld. Gå ned på 2 kr per time eller stå fast på 4 kr per time?</b><br><br>
                     <i>Det var veldig få som svarte så da står kravet fast på 4 kr per time i forhandlinger.</i>
                 </p><br><br>
-                <h4 class="newText">Oppdatering:</h4>
+                <h4 class="newText">Oppdatering:</h4><br>
                 <p>
                     02.05.23<br>
                     - Klubben krevde 8 kr per time og ledelsen skulle komme tilbake<br>
@@ -395,7 +414,7 @@
                 <p class="newText">
                     OBS!!! Under enhver omstendigheter har dere medlemmer mulighet til å be om 5 minutter for å ringe tillitsvalgte.
                     Det er utrolig viktig at dere ikke signerer på noe dere er usikker på. 
-                    Ingen spørsmål er dumem spørsmål, ring med en gang dere er usikker.
+                    Ingen spørsmål er dumme spørsmål, ring med en gang dere er usikker.
                     Arbeidsgiver kan ikke tvinge dere til å signere på noe dere ikke helt forstår.<br><br>
                     Det er utrolig vanskelig for tillitsvalgte å reversere på noe dere har godtatt eller signert!!!
                 </p><br><br>
@@ -417,17 +436,6 @@
 
                 <h3>Betalt permisjon på omsorgspermisjon:</h3><br>
                 <p>Hvis noen har fått avslag på betalt omsorgspermisjon med begrunnelse at arbeidstager ikke er folkeregistrert på samme addresse som mor, ta kontakt med oss!</p><br><br>
-                
-                <h3>Lønnsjustering:</h3><br>
-                <p>Klubben prøver å øke timelønn fra flat tariff til et overkommelig timelønn da alt har blitt mye dyrere siste årene.
-                    Kan alle medlemmer sende oss følgende opplysninger til alideg@icloud.com (sikker e-post):
-                </p><br>
-                
-                <ol>
-                    <li>Ansiennitet (Hvor lenge dere har jobbet i bransjen)</li>
-                    <li>Timelønn eller siste lønnsslipp</li>
-                    <li>Nøyaktig stillingstittel og beskrivelse av daglige oppgaver</li>
-                </ol><br><br>
 
                 <p>Vi trenger flere medlemmer for å ha bedre posisjon i forhandlinger.</p><br><br>
                 

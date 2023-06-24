@@ -164,6 +164,51 @@ ol {
     text-align: center;
 }
 
+.form-container {
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.form-container > .user-input {
+    margin-top: 20px;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.form-container > .password {
+    margin-top: 20px;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+::placeholder {
+    color: var(--col-6);
+    padding-left: 10px;
+}
+
+.form-container > button {
+    margin-top: 30px;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    border: solid var(--col-8);
+    background: var(--col-8);
+    font-size: 1rem;
+}
+
+.form-container > button:hover {
+    background: green;
+    border: solid green;
+}
+
 .card-container {
     display: flex;
     width: 100%;
