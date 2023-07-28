@@ -248,6 +248,10 @@ ol {
     color: red;
 }
 
+#HIDDEN-CONTAINER > p > a {
+    color: #38b8ff;
+}
+
 .slipp-img img {
     width: 20vw;
     height: 40vh;
