@@ -49,7 +49,7 @@ header {
     height: 5vh;
     font-size: 1.5vw;
     border-radius: 10px;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.418);
     color: #fff;
     border: red;
 }
@@ -307,7 +307,7 @@ ol {
     color: red;
 }
 .newText {
-    color: red;
+    color: rgba(150, 40, 40, 0.995);
 }
 .list {
     padding-left: 3vw;
