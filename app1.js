@@ -20,12 +20,11 @@ function testingPass() {
     passInputNumber = Number(passInput);
 
     if (employeeNr.includes(passInputNumber)) {
-        alert("Velkommen " + nickInput);
-        
-
         document.getElementById('HIDDEN-CONTAINER').classList.remove("hidden");
         document.getElementById('FORM-POPUP').style.display="none";
         document.getElementById('LOGIN-INFO').style.display="none";
+
+        alert("Velkommen " + nickInput);
     } else {
         alert("Feil passord! Prøv på nytt eller be om riktig medlemsnummer fra de tillitsvalgte.")
         document.getElementById('PASSWORD-INPUT').value="";
