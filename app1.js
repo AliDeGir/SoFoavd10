@@ -33,6 +33,28 @@ function testingPass() {
     }
 }
 
+// Function to store version number in local storage
+function storeVersion(version) {
+        localStorage.setItem('websiteVersion', version);
+    }
+  
+  // Function to check if website version has been updated
+  function checkAndUpdateVersion() {
+        const currentVersion = '1'; // Change this to the current version of your website
+        const storedVersion = localStorage.getItem('websiteVersion');
+    
+    if (storedVersion === null) {
+        // If no version is stored, store the current version
+        storeVersion(currentVersion);
+        alert('New information availible!')
+    } else if (storedVersion !== currentVersion) {
+        // If stored version is different from current version, alert the user and update the stored version
+        alert('New information availible!');
+        storeVersion(currentVersion);
+    }
+}
+
+checkAndUpdateVersion();
 
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");
