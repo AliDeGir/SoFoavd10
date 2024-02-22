@@ -320,7 +320,7 @@ footer {
     width: 100vw;
     height: 2.5vh;
     background-color: var(--logoColor);
-    color: var(--col-7);
+    color: var(--col-12);
     position: fixed;
     bottom: 0;
     display: flex;
@@ -351,7 +351,7 @@ footer {
     }
     .nav-links > ul {
         flex-direction: column;
-        height: 80vh;
+        height: 70vh;
         width: 100vw;
     }
     .burger {
@@ -379,6 +379,9 @@ footer {
     }
     .mainDiv > div {
         font-size: .8em;
+    }
+    footer {
+        font-size: 11px;
     }
 }
 

@@ -14,6 +14,8 @@ const employeeNr = [
     701685758, 701476443, 701679263
 ];
 
+let isLoggedIn = false;
+
 function testingPass() {
 
     nickInput = document.getElementById('USER-INPUT').value;
@@ -26,11 +28,24 @@ function testingPass() {
         document.getElementById('LOGIN-INFO').style.display="none";
 
         alert("Velkommen " + nickInput);
+        let isLoggedIn = true;
+        loadTawkTo();
     } else {
         alert("Feil passord! Prøv på nytt eller be om riktig medlemsnummer fra de tillitsvalgte.")
         document.getElementById('PASSWORD-INPUT').value="";
         document.getElementById('USER-INPUT').value="";
     }
+}
+
+// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+// Function to load Tawk.to script
+function loadTawkTo() {
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/65d7be4a9131ed19d9707a09/1hn9bull8';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
 }
 
 // Function to store version number in local storage
