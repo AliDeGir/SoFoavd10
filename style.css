@@ -49,26 +49,9 @@ header {
     height: 5vh;
     font-size: 1.5vw;
     border-radius: 10px;
-    background-color: rgb(17, 167, 17);
-    color: #fff;
-    border: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logout-btn {
-    cursor: pointer;
-    width: 10vw;
-    height: 5vh;
-    font-size: 1.5vw;
-    border-radius: 10px;
     background-color: rgba(255, 0, 0, 0.418);
     color: #fff;
     border: red;
-    display: none;
-    justify-content: center;
-    align-items: center;
 }
 
 .becomeMemberButton:hover {
@@ -227,60 +210,6 @@ ol {
     border: solid green;
 }
 
-.hidden-container {
-    display: none;
-    flex-direction: column;
-}
-
-.chat-container {
-    display: flex;
-    width: 400px;
-    height: 600px;
-    background-color: #6c5a58;
-    border-radius: 13px;
-    flex-direction: column;
-    padding: 10px;
-    align-items: center;
-}
-
-.display-container {
-    width: 360px;
-    height: 400px;
-    background-color: #111;
-    border-radius: 4px;
-    padding: 20px;
-    overflow-y: scroll;
-}
-
-.display-data > li {
-    background-color: darkblue;
-    border-radius: 6px;
-}
-
-.chat-container > div, input {
-    margin-top: 40px;
-}
-
-.alias-input {
-    border-radius: 6px;
-    height: 40px;
-}
-
-.comment-container {
-    width: 380px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.comment-input {
-    border-radius: 6px;
-}
-
-.comment-btn {
-    width: 60px;
-    border-radius: 6px;
-}
-
 .card-container {
     display: flex;
     width: 100%;
@@ -409,10 +338,6 @@ footer {
         width: 18vw;
         font-size: 3vw;
     }
-    .logout-btn {
-        width: 18vw;
-        font-size: 3vw;
-    }
     nav {
         transform: translateX(100%);
         transition:All 0.5s ease-in;
@@ -431,12 +356,6 @@ footer {
     }
     .burger {
         display: block;
-    }
-    .chat-container {
-        width: 94%;
-    }
-    .display-container {
-        width: 90%;
     }
     .homeImageSpan {
         margin-right: 50px;
