@@ -1,4 +1,9 @@
-import { fetchMessagesDb, addMessageDb, fetchWithSnapshot } from "./firestore.js"
+import { 
+    fetchMessagesDb, 
+    addMessageDb, 
+    fetchWithSnapshot, 
+    fetchTableContent 
+} from "./firestore.js"
 import { 
     getAuth, 
     createUserWithEmailAndPassword, 
@@ -8,6 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"
 
 const auth = getAuth();
+
 // User online status
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -19,20 +25,33 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('becomeMember-btn').style.display = "none";
         fetchWithSnapshot();
         fetchMessagesDb();
+        fetchTableContent();
     } else {
         console.log('User logged out: ', user);
     }
 })
 
+// Login
 const loginBtn = document.querySelector('#TEST-BTN');
 loginBtn.addEventListener('click', function() {
     console.log('Login button clicked');
     let email = document.querySelector('#USER-INPUT').value;
     let password = document.querySelector('#PASSWORD-INPUT').value;
 
-    signInWithEmailAndPassword(auth, email, password);
-})
+    // Attempt to sign in with email and password
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+        // Sign-in successful
+        console.log('User signed in successfully');
+    })
+    .catch((error) => {
+        // Sign-in failed, display alert
+        console.error('Sign-in error:', error);
+        alert('Email or password is incorrect');
+    });
+});
 
+// Logout
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', function() {
     signOut(auth);

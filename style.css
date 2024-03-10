@@ -186,6 +186,32 @@ ol {
     text-align: center;
 }
 
+/* CSS for custom table */
+.custom-table {
+    width: 100%; /* Make table take full width of its container */
+    border-collapse: collapse; /* Collapse borders for better styling */
+    table-layout: fixed; /* Fix the table layout to ensure equal column width */
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #f2f2f2; /* Add border to table cells */
+    padding: 8px; /* Add padding to table cells for better readability */
+    word-break: break-word; /* Break long words to fit inside cells */
+}
+
+.custom-table th {
+    background-color: #000; /* Add background color to header cells */
+    text-align: center; /* Center-align header text */
+}
+
+.custom-table td {
+    text-align: left; /* Left-align cell content */
+}
+
+.custom-table tbody tr {
+    height: auto; /* Set row height to auto */
+}
+
 .form-container {
     width: 200px;
     height: auto;
@@ -254,10 +280,11 @@ ol {
     border-radius: 4px;
     padding: 20px;
     overflow-y: scroll;
+    scrollbar-color: #007 #767772;
 }
 
 .display-data > li {
-    background-color: rgb(20, 75, 137);
+    background-color: #6c5a58e3;
     border-radius: 6px;
     padding: 5px 10px;
 }
@@ -270,6 +297,7 @@ ol {
     border-radius: 6px;
     height: 40px;
     padding-left: 10px;
+    background-color: #ffffff68;
 }
 
 .comment-container {
@@ -281,11 +309,18 @@ ol {
 .comment-input {
     border-radius: 6px;
     padding: 10px;
+    background-color: #ffffff68;
+}
+
+.comment-input::placeholder, .alias-input::placeholder {
+    color: #333;
 }
 
 .comment-btn {
     width: 60px;
     border-radius: 6px;
+    background-color: #ffffff68;
+    color:#333
 }
 
 .card-container {
