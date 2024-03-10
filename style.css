@@ -75,6 +75,10 @@ header {
     background-color: green;
 }
 
+.logout-btn:hover {
+    background-color: red;
+}
+
 .lang-container {
     padding-right: 3vw;
 }
@@ -246,19 +250,20 @@ ol {
 .display-container {
     width: 360px;
     height: 400px;
-    background-color: #111;
+    background-color: #ffffff68;
     border-radius: 4px;
     padding: 20px;
     overflow-y: scroll;
 }
 
 .display-data > li {
-    background-color: darkblue;
+    background-color: rgb(20, 75, 137);
     border-radius: 6px;
+    padding: 5px 10px;
 }
 
 .chat-container > div, input {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .alias-input {
