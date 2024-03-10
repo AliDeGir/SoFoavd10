@@ -264,6 +264,7 @@ ol {
 .alias-input {
     border-radius: 6px;
     height: 40px;
+    padding-left: 10px;
 }
 
 .comment-container {
@@ -274,6 +275,7 @@ ol {
 
 .comment-input {
     border-radius: 6px;
+    padding: 10px;
 }
 
 .comment-btn {
