@@ -16,7 +16,8 @@
 
         <!-- <img src="SimpleSLogoSmall.JPG" alt=""> -->
         <div class="logo">Sodexo Club</div>
-        <button class="becomeMemberButton" onclick="parent.open('https://www.fellesforbundet.no/medlemskap/bli-medlem/')">Bli medlem</button>
+        <button id="becomeMember-btn" class="becomeMemberButton" onclick="parent.open('https://www.fellesforbundet.no/medlemskap/bli-medlem/')">Bli medlem</button>
+        <button id="logout-btn" class="logout-btn">Logg av</button>
         <div id="google_translate_element" class="lang-container"></div>
 
     </header>
@@ -341,103 +342,48 @@
 
                     <h1>Login</h1>
 
-                    <input type="text" class="user-input" id="USER-INPUT" placeholder="Brukernavn">
+                    <!-- change input type and id to email -->
+                    <input type="email" class="user-input" id="USER-INPUT" placeholder="Epost addresse">
+                    <!-- change input id to email -->
                     <input type="password" id="PASSWORD-INPUT" class="password" value="" placeholder="Medlemsnummer" onkeydown="if(event.keyCode == 13) document.getElementById('TEST-BTN').click()">
                     <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
                     
-                    <button id="TEST-BTN" onclick="testingPass()">LOGIN</button>
+                    <!-- change button id to login-btn -->
+                    <button id="TEST-BTN">LOGIN</button>
 
                 </div>
 
             </div>
 
-            <div class="hidden" id="HIDDEN-CONTAINER">
+            <div class="hidden-container" id="HIDDEN-CONTAINER">
 
-                <h3>Sodexo Club årsmøte 2024</h3><br>
-
-                <p>
-                    Årsmøte ble avholdt 16. februar 2024 kl. 14:00<br><br>
-                    Marina Fedjajeva gjenvalgt som nestleder.<br>
-                    Salwa Zakaria gjenvalgt som sekretær.<br><br>
-                </p>
+                <div id="chat-container" class="chat-container">
+                    <h4>Chat</h4>
+                    <div class="display-container">
+                        <ul id="display-data" class="display-data">
+                
+                        </ul>
+                    </div>
+                    <input type="text" id="alias-input" class="alias-input" placeholder="Alias">
+                    <div class="comment-container">
+                        <textarea id="comment-input" 
+                            cols="30" 
+                            rows="6" 
+                            class="comment-input"
+                            placeholder="Skriv din melding her..."
+                            onkeydown="if (event.keyCode == 13)
+                                        document.getElementById('comment-btn').click()"></textarea>
+                        <button id="comment-btn" class="comment-btn">Send</button>
+                    </div>
+                    
+                </div>
                 
                 <br><br><hr><br><br>
 
-                <h3>Tariffoppgjøret 2024</h3><br><br>
-
-                <p>
-                    Det kommer mest sannsynlig å bli streik i år også. Om din avdeling blir tatt ut til streik, får vi vite underveis. Husk å oppdatere deres kontaktinfo hos fellesforbundet.<br><br>
-                    Det blir utbetalt streikebidrag til medlemmer fra Fellesforbundet mens ikke-medlemmer blir permittert uten lønn under streik. Si dette til de som ikke er organisert.<br>
-                    Det er derfor det er viktig å ha riktig kontaktinfo hos Fellesforbundet.<br>
-                    Fellesforbundet kommer å sende oppdateringer direkte til dere medlemmer. Hvis dere har feil kontaktinfo registrert så kan dere gå glipp av viktiginformasjonen eller streikebidrag.<br><br>
-                    Du kan selv oppdatere din kontaktinfo på Fellesforbundets hjemmeside i ved å først logge inn også trykke på "mine sider" øverst til høyre på hjemmesiden.<br>
-                </p><br><br>
-
-                <p class="links">
-                    <a href="https://www.fellesforbundet.no">Trykk her for å se eller endre din kontaktinfo hos Fellesforbundet</a><br><br>
-                    <a href="https://www.fellesforbundet.no/lonn-og-tariff/tariffoppgjoret-2024/">Tariffoppgjøret 2024 oppdateringer fra Fellesforbundet</a>
-                </p>
-
-                <br><br><hr><br><br>
-
-                <h3>Lokale lønnsforhandlinger 2024</h3><br><br>
-
-                <p>
-                    Vi burde få til et medlemsmøte før vi begynner å forberede til lokale lønnsforhandlinger i år. Kom med forslag på dato. Husk at klubben skal føre videre deres krav.<br>
-                    Hvis dere ikke krever så kan ikke føre videre noe krav til arbeidsgiver.
-                </p>
-
-                <br><br><hr><br><br>
-
-                <h3>Medlemsmøter</h3><br>
-
-                <p>
-                    VIKTIG!!! Det er viktig at dere engasjerer dere og deltar på medlemsmøter og ikke minst på årsmøter. Det er her dere som betalende medlemmer, skal komme med krav til arbeidsgiver.
-                    Hvis ikke vi som organiserte arbeidstakere krever, så er det sjelden vi får goder eller lønnsøkning frivillig fra arbeidsgiver.<br>
-                </p><br>
-
-                <br><br><hr><br><br>
-
-                <h3>Vaktplan</h3><br>
-
-                <p>
-                    Klubben har nå fått mulighet til å medvirke vaktplan på avdelinger der det er tariffavtale. Hvis det er noe utfordringer med vaktplan, gi oss beskjed.
-                </p><br>
-
-                <br><br><hr><br><br>
-
-                <h3>Viktig!</h3><br>
-
-                <p class="newText">
-                    OBS!!! Under enhver omstendigheter har dere medlemmer mulighet til å be om 5 minutter for å ringe tillitsvalgte.
-                    Det er utrolig viktig at dere ikke signerer på noe dere er usikker på. 
-                    Ingen spørsmål er dumme spørsmål, ring med en gang dere er usikker.
-                    Arbeidsgiver kan ikke tvinge dere til å signere på noe dere ikke helt forstår.<br><br>
-                    Det er veldig vanskelig for tillitsvalgte å reversere på noe dere har godtatt eller signert!!!
-                </p><br><br>
-
-                <ol>
-                    <li>Ikke signer på dokumenter som du ikke forstår helt, ring og spør.</li>
-                    <li>Ikke godta møter med HR alene.</li><br>
-                    <li>Det er din rett å be om bistand og det er brudd på arbeidsmiljøloven å forhindre det. Vær høflig å si at du ikke helt forstår og vil rådføre deg med tillitsvalgt.
-                        Hvis det haster, ring oss eller send en melding så svarer vi i løpet av arbeidsdagen mellom 08:00 og 16:00.
-                        Det er vår jobb som tillitsvalgte å svare på dine spørsmål og bistå deg hvis du trenger det. Derfor betaler du kontingent til forbundet.
-                    </li><br>
-                    <li>Dersom du blir innkalt til møte med HR, ha innkallingen klar til å sende oss på melding eller e-post.</li>
-                    <li>Trenger du bistand til arbeidskontrakt, ha en kopi klar til å sende til oss på melding eller e-post.</li>
-                    <li>Trenger du bistand til arbeidstid, ha kopi av timeplanen for den aktuelle perioden klar til å sende oss på melding eller e-post.</li>
-                    <li>Trenger du bistand til lønn, ha kopi av lønnsslipp for den aktuelle perioden klar til å sende oss på melding eller epost.</li><br>
-                    <li>Hvis du ikke har fått lønnsøkning og etterbetaling fra april/mai, send oss melding eller epost.</li>
-                    <li>Blir du trekt for kost under ferier og sykemeldinger, send oss melding eller epost.</li>
-                </ol><br><br>
-
-                <h3>Betalt permisjon på omsorgspermisjon:</h3><br>
-                <p>Hvis noen har fått avslag på betalt omsorgspermisjon med begrunnelse at arbeidstager ikke er folkeregistrert på samme addresse som mor, ta kontakt med oss!</p><br><br>
-
-                <p>Vi trenger flere medlemmer for å ha bedre posisjon i forhandlinger.</p><br><br>
-
+                <div>
+                    <ul id="members-news"></ul>
+                </div>
                 
-
             </div>
         </div>
 
@@ -505,6 +451,9 @@
     <script src="app1.js"></script>
 
     <script src="app2.js"></script>
+    <script type="module" src="/firebase/configFB.js"></script>
+    <script type="module" src="/firebase/firestore.js"></script>
+    <script type="module" src="/firebase/auth.js"></script>
 
 </body>
 </html>
