@@ -25,7 +25,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('becomeMember-btn').style.display = "none";
         fetchWithSnapshot();
         fetchMessagesDb();
-        fetchTableContent();
+
     } else {
         console.log('User logged out: ', user);
     }

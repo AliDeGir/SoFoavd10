@@ -236,4 +236,6 @@ async function fetchTableContent() {
     }
 }
 
+fetchTableContent();
+
 export { fetchMessagesDb, addMessageDb, fetchWithSnapshot, fetchTableContent }
