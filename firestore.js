@@ -236,6 +236,8 @@ async function fetchTableContent() {
     }
 }
 
+// html build
+// Tariff fordeler table
 fetchTableContent();
 
 export { fetchMessagesDb, addMessageDb, fetchWithSnapshot, fetchTableContent }
