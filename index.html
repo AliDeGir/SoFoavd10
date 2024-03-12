@@ -12,7 +12,7 @@
 
 <body>
 
-    <header>
+    <header class="header-container browser-default">
 
         <!-- <img src="SimpleSLogoSmall.JPG" alt=""> -->
         <div class="logo">Sodexo Club</div>
@@ -24,9 +24,9 @@
 
     
 
-    <nav class="nav-links">
+    <nav class="nav-links browser-default">
 
-        <ul class="menu-links">
+        <ul class="menu-links browser-default">
             <li data-ref="DIV1">Hjem</li>
             <li data-ref="DIV2">Nyheter</li>
             <li data-ref="DIV3">Tariff fordeler</li>
@@ -37,7 +37,7 @@
 
     </nav>
 
-    <div class="burger">
+    <div class="burger browser-default">
 
         <div class="line1"></div>
         <div class="line2"></div>
@@ -45,9 +45,9 @@
 
     </div>
 
-    <div class="mainDiv">
+    <div class="mainDiv browser-default">
         
-        <div id="DIV1" class="active">
+        <div id="DIV1" class="active browser-default">
 
             <h1>Velkommen</h1><br>
 
@@ -82,8 +82,8 @@
             
             <hr><br><br>
 
-            <div class="newDivHomeSpanImg">
-                <span class="homeImageSpan">
+            <div class="newDivHomeSpanImg browser-default">
+                <span class="homeImageSpan browser-default">
                     <h2>Det "lønner" seg å være organisert!</h2><br><br>
                     <p>
                         Lønningene på en arbeidsplass øker med 14-15 prosent dersom halvparten av de ansatte er organiserte.
@@ -150,19 +150,10 @@
 
             <h2>Nyheter:</h2><br>
 
-            <h3>Tariffoppgjør 2024:</h3><br>
-            <p>
-                Det nærmer seg tariffoppgjøret 2024.<br>
-                Tariffoppgjøret i 2024 er et hovedoppgjør. Da er alle bestemmelsene i tariffavtalene oppe til forhandling. Lønn, arbeidstid, pensjon, velferdspermisjoner, overtidsbetaling, bestemmelser om arbeidstøy og annet kan endres.
-                Vi kan i tillegg komme med forslag til krav. Les litt på gjeldende tariffavtalen, som heter Riksavtalen under meny. Skriv opp forslag hvis dere kommer på noe eller om dere lurer på noe så er dere velkommen til å ta kontakt.<br><br>
-                Det er viktig å oppdatere informasjonen din på Fellesforbundet/mine sider. Hvis feil avdeling, feil kontonummer osv ikke er oppdatert, kan du risikere å ikke få lønn under streik, hvis det skulle bli streik under tariffoppgjøret i 2024.<br><br>
-                <p class="links"><a href="https://www.fellesforbundet.no/min-side/">Klikk her for å gå inn på Fellesforbundet/mine sider for å endre på informasjonen din. Hvis det er første gang du prøver å logge inn, da må du registrere deg først. Trykk deretter på "Endre mine opplysninger".</a></p>
-            </p><br><br><hr><br><br>
-
             <h3>AFP:</h3><br>
 
             <p>
-                Viktig! For å ha krav på AFP så må man ha jobbet i en avdeling med tariffavtale 7 av de siste 9 årene.<br>
+                Viktig! Det holder ikke å være medlem for å ha krav på AFP, man må ha jobbet i en avdeling med tariffavtale 7 av de siste 9 årene.<br>
                 Ta kontakt med deres avdelingsleder og spør om avdelingen dere jobber på har tariffavtale eller bare trekkavtale.<br>
                 Det går mye fortere å finne ut hvis dere selv spør deres avdelingsleder.<br>
                 Forskjellen er at ved trekkavtale så har man ikke krav på AFP.<br><br>
@@ -184,9 +175,6 @@
 
             <hr><br><br>
             
-            <h3>Vi har nå fått egen lukket Facebook gruppe for medlemmene der alle kan kommentere og komme med forslag.</h3><br>
-            <p class="links"><a href="https://www.facebook.com/groups/1159888521311062/?ref=share_group_link">Meld dere på Facebook gruppen her!</a></p><br>
-            <hr><br><br>
             
             
             <div class="slipp-img">
@@ -196,23 +184,11 @@
 
             <hr><br><br>
             
-            <h2>Eventer</h2><br><br>
-            
-            <h3>Grunnleggende norsk kurs for Sodexo ansatte</h3><br>
-            <p>Da har vi fått til grunnleggende norsk kurs for Sodexo ansatte. Ta kontakt med din nærmeste leder for detaljer.</p><br>
-            <hr><br><br>
-            
             <h3>Login for medlemmer</h3><br>
             <p>Saker som handler om medlemmer har blitt flyttet. Trykk på "Medlemmer" på meny, tast inn epost og medlemsnummer fra Fellesforbundet for å logg inn. Da får dere tilgang til teksten. Gi beskjed hvis det ikke går.</p><br>
 
-            <hr><br><br>
+            <br><br>
             
-            <h3>Tillitsvalgte besøker medlemmene på avdelinger</h3><br>
-            <p>
-                Vi skal begynne med å besøke medlemmene på avdelinger.
-                Hvis det ikke lar seg gjøre eller det er noen andre hindringer, gi oss gjerne beskjed. Det skal primært være på fredager men hvis det er særskilte grunner så kan det avtales en annen dag.
-            </p><br>
-
         </div>
         
         <div id="DIV3">
@@ -223,43 +199,10 @@
             
             <p>Under finner du en liste over forskjeller på med og uten tariffavtale:</p><br>
 
-            <div id="table-div"></div><br>
+            <div id="table-div"></div><br><br><br>
             
+            <ul id="tariffFordelerUl" class="collapsible"></ul><br><br><br>
 
-            <h3>Forsikringsalternativer som tilbys av Fellesforbundet:</h3><br>
-
-            <ol>
-                <li>
-                    LOfavør Innboforsikring: En fullverdiforsikring av innbo og løsøre som også inkluderer ansvarsforsikring, rettshjelpsforsikring og forsikring av ditt innbo og løsøre.
-                    Forsikringen dekker ikke studentmedlemmer.
-                </li>
-                <li>
-                    LOfavør Grunnforsikring: Denne forsikringen gir økonomisk ‘førstehjelp’ i form av engangsutbetaling når medlem, ektefelle/samboer eller barn dør.
-                    Forsikringen dekker ikke studentmedlemmer.
-                </li>
-                <li>
-                    LOfavør Ulykkesforsikring: Denne forsikringen gir økonomisk støtte ved dødsfall, uførhet og behandlingsutgifter som følge av en ulykke som har skjedd utenom arbeidstid.
-                    Alle medlemmer under 70 år er kvalifisert for denne forsikringen – med unntak av studentmedlemmer
-                </li>
-            </ol><br>
-
-            <h3>Egenbetalingsforsikringer:</h3><br>
-
-            <ol>
-                <li>
-                    Med LOfavør Advokatforsikring får medlemmer tilgang til dyktige advokater fra HELP. Du betaler ingen timepris, kun forsikringspremien. Koster kun 194 kr. i mnd.
-                </li>
-                <li>LOfavør Reiseforsikring: Med LOfavør Reiseforsikring er du dekket fra du går ut av døra i hjemmet ditt. Forsikringen dekker alle typer reiser, hele året.
-                    Du kan velge mellom dekning for enslig eller for familie.
-                </li>
-            </ol><br>
-
-            <h3>Støtte til videre/etterutdanning/opplæring:</h3><br>
-
-            <p>Er du medlem av Fellesforbundet (og ikke student) og har vært medlem de siste tre årene, vil du kunne søke støtte fra LOs utdanningsfond!
-                Fondet gir støtte til helårs utdannings-/treningskurs samt til kortere kurs.
-            </p><br>
-            <p class="links"><a href="https://www.lofavor.no/home">Flere medlemsfordeler og forsikringer via LOfavør</a></p>
         </div>
 
         <div id="DIV4">
@@ -337,9 +280,7 @@
                 
                 <br><br><hr><br><br>
 
-                <div>
-                    <ul id="members-news"></ul>
-                </div>
+                <ul id="members-news" class="collapsible"></ul>
                 
             </div>
         </div>
@@ -348,9 +289,9 @@
 
             <h2>Kontakt Oss</h2><br>
 
-            <div class="card-container">
+            <div class="card-container browser-default">
 
-                <div class="card-1">
+                <div class="card-1 browser-default">
                     <div class="contact-img">
                         <img src="AliNoBackground.JPG" alt="">
                     </div>
@@ -393,7 +334,7 @@
 
         </div>
 
-        <footer>
+        <footer class="footer-container">
             <p>© Sodexo Club - Oppdatert: 10. mars 2024</p>
         </footer>
 
@@ -402,11 +343,10 @@
             new google.translate.TranslateElement({pageLanguage: 'no'}, 'google_translate_element');
         }
     </script>
+    
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
     <script src="app1.js"></script>
-
     <script src="app2.js"></script>
     <script type="module" src="configFB.js"></script>
     <script type="module" src="firestore.js"></script>

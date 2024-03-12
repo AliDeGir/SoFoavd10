@@ -1,7 +1,7 @@
-import { 
-    fetchMessagesDb, 
+import {
+    fetchMembersNews,
+    fetchMessages,
     addMessageDb, 
-    fetchWithSnapshot, 
     fetchTableContent 
 } from "./firestore.js"
 import { 
@@ -23,13 +23,14 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('LOGIN-INFO').style.display="none";
         document.getElementById('logout-btn').style.display= "flex";
         document.getElementById('becomeMember-btn').style.display = "none";
-        fetchWithSnapshot();
-        fetchMessagesDb();
-
+        fetchMessages();
+        fetchMembersNews();
     } else {
         console.log('User logged out: ', user);
     }
 })
+
+
 
 // Login
 const loginBtn = document.querySelector('#TEST-BTN');

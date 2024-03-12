@@ -18,7 +18,7 @@ const db = getFirestore(app);
 const auth = getAuth();
 
 // snapshot listener for chat
-async function fetchWithSnapshot() {
+async function fetchMessages() {
     const toDisplay = document.querySelector('#display-data');
     try {
         const unsub = onSnapshot(collection(db, "messagesApp/messages/messagesDB"), (snapshot) => {
@@ -69,7 +69,6 @@ async function addMessageDb() {
     const aliasInput = document.querySelector('#alias-input').value;
     const user = auth.currentUser;
     const uid = user.uid;
-    console.log('Function engaged!')
     const doqref = await addDoc(collection(db, "messagesApp/messages/messagesDB"), {
         content: commentInput,
         timeStamp: Date.now(),
@@ -98,38 +97,91 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
         let html = '';
         querySnapshot.forEach((doc) => {
             const news = doc.data();
-            console.log(news);
-            let contentHtml = `<div>${news.content}</div>`;
-            
-            // Iterate over the keys of the news object
-            Object.keys(news).forEach(key => {
-                // Check if the value is an array
-                if (Array.isArray(news[key])) {
-                    contentHtml += '<br>'; // Add line break before the nested list
-                    contentHtml += '<ul style="margin-left: 20px;">'; // Apply margin-left to indent the nested list
-                    news[key].forEach((subItem) => {
-                        contentHtml += `<li>${subItem}</li>`; // Add each subContent item as a list item
-                    });
-                    contentHtml += '</ul>'; // End the list
-                }
-            });
 
-            const li = `
-                <li>
-                    <div style="font-weight: bold">${news.header}</div><br>
-                    ${contentHtml}
-                </li>
-                <br>`; // Add line break after each main list item
-            html += li;
+            // Check if news is an array
+            if (Array.isArray(news)) {
+                // Iterate over each object in the news array
+                news.forEach((item) => {
+                    // Extract header and content values from the current object
+                    const headerValue = item.header;
+                    const contentValue = item.content;
+                    let subContentHtml = '';
+
+                    // Iterate over the keys of the item object
+                    Object.keys(item).forEach((key) => {
+                        // Check if the value is an array
+                        if (Array.isArray(item[key])) {
+                            // Iterate over the array and construct HTML for sublist
+                            subContentHtml += '<ul>';
+                            item[key].forEach((subItem) => {
+                                subContentHtml += `<li>${subItem}</li>`;
+                            });
+                            subContentHtml += '</ul>';
+                        }
+                    });
+
+                    // Create collapsible HTML structure for each item
+                    const collapsibleHtml = `
+                        <li>
+                            <div class="collapsible-header">${headerValue}</div>
+                            <div class="collapsible-body">
+                                <p>
+                                    ${contentValue}
+                                    ${subContentHtml}
+                                </p>
+                            </div>
+                        </li>
+                    `;
+
+                    html += collapsibleHtml;
+                });
+            } else {
+                // If news is not an array, assume it's a single object
+                const headerValue = news.header;
+                const contentValue = news.content;
+                let subContentHtml = '';
+
+                // Iterate over the keys of the news object
+                Object.keys(news).forEach((key) => {
+                    // Check if the value is an array
+                    if (Array.isArray(news[key])) {
+                        // Iterate over the array and construct HTML for sublist
+                        subContentHtml += '<ul>';
+                        news[key].forEach((subItem) => {
+                            subContentHtml += `<li>${subItem}</li>`;
+                        });
+                        subContentHtml += '</ul>';
+                    }
+                });
+
+                const collapsibleHtml = `
+                    <li>
+                        <div class="collapsible-header">${headerValue}</div>
+                        <div class="collapsible-body">
+                            <p>
+                                ${contentValue}
+                                ${subContentHtml}
+                            </p>
+                        </div>
+                    </li>
+                `;
+
+                html += collapsibleHtml;
+            }
         });
+
+        // Set the HTML content to the memberNewsToAdd element
         memberNewsToAdd.innerHTML = html;
+
+        
     } catch (error) {
         console.error("Error iterating and adding HTML:", error);
     }
 }
 
 // Usage example:
-async function fetchMessagesDb() {
+// Members news fetch
+async function fetchMembersNews() {
     const filePath = "messagesApp/membersNews/membersNewsDB";
     const memberNewsToAdd = document.querySelector('#members-news');
     const querySnapshot = await getQuerySnapshot(filePath);
@@ -138,37 +190,15 @@ async function fetchMessagesDb() {
     }
 }
 
-// async function fetchMessagesDb() {
-//     try {
-//         const querySnapshot = await getDocs(collection(db, "messagesApp/membersNews/membersNewsDB"));
-//         const memberNewsToAdd = document.querySelector('#members-news');
-//         console.log("Fetch DB engaged!")
-//         let html = '';
-//         querySnapshot.forEach((doc) => {
-//             const news = doc.data();
-//             console.log(news);
-//             let contentHtml = `<div>${news.content}</div>`;
-//             if (Array.isArray(news.subContent)) {
-//                 contentHtml += '<br>'; // Add line break before the nested list
-//                 contentHtml += '<ul style="margin-left: 20px;">'; // Start the list
-//                 news.subContent.forEach((subItem) => {
-//                     contentHtml += `<li>${subItem}</li>`; // Add each subContent item as a list item
-//                 });
-//                 contentHtml += '</ul>'; // End the list
-//             }
-//             const li = `
-//                 <li>
-//                     <div style="font-weight: bold">${news.header}</div><br>
-//                     ${contentHtml}
-//                 </li><br>
-//             `;
-//             html += li;
-//         });
-//         memberNewsToAdd.innerHTML = html;
-//     } catch (error) {
-//         console.error("Error getting documents:", error);
-//     }
-// }
+// Tariff fordeler fetch
+async function fetchTariffFordelList() {
+    const filePath = "messagesApp/medlemsfordelerDb/medlemsfordeler";
+    const fordelerToAdd = document.querySelector('#tariffFordelerUl');
+    const querySnapshot = await getQuerySnapshot(filePath);
+    if (querySnapshot) {
+        iterateAddHtmlAsList(querySnapshot, fordelerToAdd);
+    }
+}
 
 
 // getting data for table creation
@@ -182,9 +212,6 @@ async function fetchTableContent() {
             data.push(doc.data());
             // console.log(doc.data())
         });
-        console.log(data);
-
-
         // Function to generate HTML table
         function generateTable(array) {
             const tableDisplay = document.querySelector('#table-div');
@@ -237,7 +264,57 @@ async function fetchTableContent() {
 }
 
 // html build
-// Tariff fordeler table
 fetchTableContent();
+fetchTariffFordelList();
 
-export { fetchMessagesDb, addMessageDb, fetchWithSnapshot, fetchTableContent }
+// intiate collapsible function
+document.addEventListener('DOMContentLoaded', function() {
+    const collapsibleElements = document.querySelectorAll('.collapsible');
+    collapsibleElements.forEach(function(collapsibleElement) {
+        collapsibleElement.addEventListener('click', function(event) {
+            console.log('Header clicked!')
+            // Check if the clicked element or its ancestor matches the .collapsible-header selector
+            const header = event.target.closest('.collapsible-header');
+            if (header) {
+                // Find the corresponding collapsible-body
+                const body = header.nextElementSibling;
+                
+                // Close any open collapsible-bodies
+                const openBodies = document.querySelectorAll('.collapsible-body.open');
+                openBodies.forEach(function(openBody) {
+                    if (openBody !== body) {
+                        openBody.classList.remove('open');
+                    }
+                });
+
+                // Toggle the .open class on the body
+                body.classList.toggle('open');
+                // Stop the event from propagating further
+                event.stopPropagation();
+            }
+        });
+    });
+});
+
+// function initCollapsible() {
+//     console.log("initCollapsible function called");
+//     const headers = document.querySelectorAll('.collapsible-header');
+
+//     headers.forEach(header => {
+//         header.addEventListener('click', function() {
+//             console.log("Header clicked");
+//             const body = this.nextElementSibling;
+
+//             if (body.classList.contains('open')) {
+//                 body.classList.remove('open');
+//                 body.style.maxHeight = '0'; // Ensure body collapses smoothly
+//             } else {
+//                 body.classList.add('open');
+//                 body.style.maxHeight = body.scrollHeight + 'px'; // Expand body to its full height
+//             }
+//         });
+//     });
+// }
+
+
+export { fetchMembersNews, addMessageDb, fetchMessages, fetchTableContent, fetchTariffFordelList }
