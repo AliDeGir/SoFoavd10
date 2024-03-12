@@ -505,8 +505,11 @@
     .mainDiv > div {
         font-size: .8em;
     }
-    footer {
+    .footer-container {
         font-size: 11px;
+    }
+    .collapsible {
+        width: 70vw;
     }
 }
 
@@ -525,12 +528,12 @@
 }
 
 .collapsible {
-width: 700px;
+width: 88vw;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
 /* background-color: #333; */
-padding-left: 10px;
+/* padding-left: 1vw; */
 margin-left: 1.8vw;
 }
 
@@ -540,11 +543,11 @@ list-style-type: none;
 }
 
 .collapsible-header {
-height: 100px;
-font-size: 30px;
+height: 10vh;
+font-size: 1.2rem;
 display: flex;
 align-items: center;
-padding-left: 10px;
+padding-left: 4vw;
 cursor: pointer;
 background-color: rgb(111, 110, 110);
 border-bottom: 1px solid black;
@@ -568,7 +571,7 @@ max-height: auto;
 
 .collapsible-body > p {
 padding: 20px;
-font-size: 20px;
+font-size: .8rem;
 }
 
 .collapsible-body {
