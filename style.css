@@ -509,7 +509,10 @@
         font-size: 11px;
     }
     .collapsible {
-        width: 70vw;
+        width: 50vw;
+    }
+    #DIV3 > ul {
+        margin: 0 6vw;
     }
 }
 
