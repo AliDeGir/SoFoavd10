@@ -33,7 +33,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 // Login
-const loginBtn = document.querySelector('#TEST-BTN');
+const loginBtn = document.querySelector('#LOGIN-BTN');
 loginBtn.addEventListener('click', function() {
     console.log('Login button clicked');
     let email = document.querySelector('#USER-INPUT').value;
@@ -43,7 +43,7 @@ loginBtn.addEventListener('click', function() {
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
         // Sign-in successful
-        console.log('User signed in successfully');
+        // console.log('User signed in successfully');
     })
     .catch((error) => {
         // Sign-in failed, display alert
@@ -56,7 +56,7 @@ loginBtn.addEventListener('click', function() {
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', function() {
     signOut(auth);
-    console.log('Log out button clicked');
+    // console.log('Log out button clicked');
     document.getElementById('HIDDEN-CONTAINER').style.display = "none";
     document.getElementById('FORM-POPUP').style.display = "flex";
     document.getElementById('logout-btn').style.display= "none";

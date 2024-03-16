@@ -123,7 +123,7 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
                     // Create collapsible HTML structure for each item
                     const collapsibleHtml = `
                         <li>
-                            <div class="collapsible-header">${headerValue}</div>
+                            <div class="collapsible-header"><h4>${headerValue}</h4></div>
                             <div class="collapsible-body">
                                 <p>
                                     ${contentValue}
@@ -156,7 +156,7 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
 
                 const collapsibleHtml = `
                     <li>
-                        <div class="collapsible-header">${headerValue}</div>
+                        <div class="collapsible-header"><h4>${headerValue}</h4></div>
                         <div class="collapsible-body">
                             <p>
                                 ${contentValue}
@@ -179,7 +179,82 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
     }
 }
 
-// Usage example:
+// get spesific photo url and export
+async function getPhotoDoc(filePath) {
+    try {
+      const docRef = doc(db, filePath)
+      const docSnap = await getDoc(docRef)
+    //   console.log(`docSnap data: ${docSnap.data().url}`)
+      return docSnap.data().url;
+    } catch {
+      console.error("Error getting query snapshot:", error);
+    }
+}
+
+// get contact info
+async function getContactDoc(filePath) {
+    try {
+        const docRef = doc(db, filePath);
+        const docSnap = await getDoc(docRef);
+        return docSnap.data();
+    } catch {
+        console.error("Error getting query snapshot:", error);
+    }
+}
+
+// get slip img
+
+
+
+// Usage examples below:
+
+// contact info fetch
+const aliInfoPath = "messagesApp/contactDb/contact/Ali Degirmenci";
+const marinaInfoPath = "messagesApp/contactDb/contact/Marina Fedjajeva";
+const infoDivMarina = document.querySelector('#contact-info-marina');
+const infoDivAli = document.querySelector('#contact-info-ali');
+
+function fetchContactInfo(path, divToAdd, name) {
+    getContactDoc(path)
+        .then((res) => {
+            // console.log(`fetch contact info, title: ${res.title}`)
+            let html = `<h2 class="notranslate">${name}</h2><p>${res.title}</p><br><p>${res.phone}</p><p>${res.email}</p>`
+            divToAdd.innerHTML = html;
+        })
+        .catch((error) => {
+            console.log(`Error: ${error}`);
+        })
+}
+
+// calling contact info to html
+fetchContactInfo(aliInfoPath, infoDivAli, "Ali Degirmenci");
+fetchContactInfo(marinaInfoPath, infoDivMarina, "Marina Fedjajeva")
+
+
+// photo fetch
+const aliPhotoPath = "messagesApp/photosDb/photos/raoe5QY36fWZgHVsg0qZ";
+const marinaPhotoPath = "messagesApp/photosDb/photos/ZjNylCkih0dUb0lhrRas";
+const photoDivAli = document.querySelector("#contact-img1");
+const photoDivMarina = document.querySelector("#contact-img2")
+
+function fetchPhotos(path, divToAdd) {
+    getPhotoDoc(path)
+      .then((res) => {
+        
+        let html = `<img src="${res}">`;
+        divToAdd.innerHTML = html;
+        // console.log(`call getPhotos: ${res}`);
+      })
+      .catch((error) => {
+        console.log(`Error: ${error}`);
+      })
+}
+
+// calling photos to be added to html
+fetchPhotos(aliPhotoPath, photoDivAli);
+fetchPhotos(marinaPhotoPath, photoDivMarina);
+
+
 // Members news fetch
 async function fetchMembersNews() {
     const filePath = "messagesApp/membersNews/membersNewsDB";
@@ -199,6 +274,37 @@ async function fetchTariffFordelList() {
         iterateAddHtmlAsList(querySnapshot, fordelerToAdd);
     }
 }
+
+// landing page fetch
+async function fetchLandingPage() {
+    const filePath = "messagesApp/landingPageDb/landingPage";
+    const landingPageToAdd = document.querySelector('#landing-page');
+    const querySnapshot = await getQuerySnapshot(filePath);
+    if (querySnapshot) {
+        iterateAddHtmlAsList(querySnapshot, landingPageToAdd);
+    }
+}
+
+// riksavtalen fetch
+async function fetchRiksavtaler() {
+    const filePath = "messagesApp/riksavtalenDb/riksavtalen";
+    const riksavtalenUl = document.querySelector('#riksavtaler');
+    const querySnapshot = await getQuerySnapshot(filePath);
+    if (querySnapshot) {
+        iterateAddHtmlAsList(querySnapshot, riksavtalenUl);
+    }
+}
+
+// nyheter fetch
+async function fetchPublicNews() {
+    const filePath = "messagesApp/newsPublicDb/newsPublic";
+    const publicNewsUl = document.querySelector('#nyheter');
+    const querySnapshot = await getQuerySnapshot(filePath);
+    if (querySnapshot) {
+        iterateAddHtmlAsList(querySnapshot, publicNewsUl);
+    }
+}
+
 
 
 // getting data for table creation
@@ -266,13 +372,16 @@ async function fetchTableContent() {
 // html build
 fetchTableContent();
 fetchTariffFordelList();
+fetchLandingPage();
+fetchRiksavtaler();
+fetchPublicNews();
 
 // intiate collapsible function
 document.addEventListener('DOMContentLoaded', function() {
     const collapsibleElements = document.querySelectorAll('.collapsible');
     collapsibleElements.forEach(function(collapsibleElement) {
         collapsibleElement.addEventListener('click', function(event) {
-            console.log('Header clicked!')
+            // console.log('Header clicked!')
             // Check if the clicked element or its ancestor matches the .collapsible-header selector
             const header = event.target.closest('.collapsible-header');
             if (header) {
@@ -295,26 +404,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// function initCollapsible() {
-//     console.log("initCollapsible function called");
-//     const headers = document.querySelectorAll('.collapsible-header');
-
-//     headers.forEach(header => {
-//         header.addEventListener('click', function() {
-//             console.log("Header clicked");
-//             const body = this.nextElementSibling;
-
-//             if (body.classList.contains('open')) {
-//                 body.classList.remove('open');
-//                 body.style.maxHeight = '0'; // Ensure body collapses smoothly
-//             } else {
-//                 body.classList.add('open');
-//                 body.style.maxHeight = body.scrollHeight + 'px'; // Expand body to its full height
-//             }
-//         });
-//     });
-// }
 
 
 export { fetchMembersNews, addMessageDb, fetchMessages, fetchTableContent, fetchTariffFordelList }

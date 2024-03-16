@@ -5,7 +5,7 @@ function storeVersion(version) {
 
 // Function to check if website version has been updated
 function checkAndUpdateVersion() {
-    const currentVersion = '2'; // Change this to the current version of your website
+    const currentVersion = '3'; // Change this to the current version of your website
     const storedVersion = localStorage.getItem('websiteVersion');
 
 if (storedVersion === null) {
