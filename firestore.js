@@ -179,80 +179,55 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
     }
 }
 
-// get spesific photo url and export
-async function getPhotoDoc(filePath) {
-    try {
-      const docRef = doc(db, filePath)
-      const docSnap = await getDoc(docRef)
-    //   console.log(`docSnap data: ${docSnap.data().url}`)
-      return docSnap.data().url;
-    } catch {
-      console.error("Error getting query snapshot:", error);
-    }
+
+
+// Generic function to fetch document data from Firestore
+function getDocData(filePath, key) {
+    const docRef = doc(db, filePath);
+
+    return getDoc(docRef)
+        .then((docSnap) => {
+            const data = docSnap.data();
+            return key ? data[key] : data; // Return the specified key or the entire data object
+        })
+        .catch((error) => {
+            console.error("Error getting document:", error);
+            throw error; // Re-throw the error for further handling if needed
+        });
 }
 
-// get contact info
-async function getContactDoc(filePath) {
-    try {
-        const docRef = doc(db, filePath);
-        const docSnap = await getDoc(docRef);
-        return docSnap.data();
-    } catch {
-        console.error("Error getting query snapshot:", error);
-    }
-}
-
-// get slip img
 
 
 
 // Usage examples below:
 
-// contact info fetch
-const aliInfoPath = "messagesApp/contactDb/contact/Ali Degirmenci";
-const marinaInfoPath = "messagesApp/contactDb/contact/Marina Fedjajeva";
-const infoDivMarina = document.querySelector('#contact-info-marina');
-const infoDivAli = document.querySelector('#contact-info-ali');
 
-function fetchContactInfo(path, divToAdd, name) {
-    getContactDoc(path)
-        .then((res) => {
-            // console.log(`fetch contact info, title: ${res.title}`)
-            let html = `<h2 class="notranslate">${name}</h2><p>${res.title}</p><br><p>${res.phone}</p><p>${res.email}</p>`
-            divToAdd.innerHTML = html;
-        })
-        .catch((error) => {
-            console.log(`Error: ${error}`);
-        })
-}
-
-// calling contact info to html
-fetchContactInfo(aliInfoPath, infoDivAli, "Ali Degirmenci");
-fetchContactInfo(marinaInfoPath, infoDivMarina, "Marina Fedjajeva")
-
-
-// photo fetch
-const aliPhotoPath = "messagesApp/photosDb/photos/raoe5QY36fWZgHVsg0qZ";
-const marinaPhotoPath = "messagesApp/photosDb/photos/ZjNylCkih0dUb0lhrRas";
-const photoDivAli = document.querySelector("#contact-img1");
-const photoDivMarina = document.querySelector("#contact-img2")
-
-function fetchPhotos(path, divToAdd) {
-    getPhotoDoc(path)
-      .then((res) => {
-        
-        let html = `<img src="${res}">`;
+// Usage for fetching photo URL
+function photoLoad(path, divToAdd) {
+    getDocData(path, 'url')
+    .then((url) => {
+        // console.log("Photo URL:", url);
+        let html = `<img src="${url}">`;
         divToAdd.innerHTML = html;
-        // console.log(`call getPhotos: ${res}`);
-      })
-      .catch((error) => {
-        console.log(`Error: ${error}`);
-      })
+    })
+    .catch((error) => {
+        console.error("Error fetching photo URL:", error);
+    });
 }
 
-// calling photos to be added to html
-fetchPhotos(aliPhotoPath, photoDivAli);
-fetchPhotos(marinaPhotoPath, photoDivMarina);
+// Usage for fetching contact info
+function contactInfoLoad(path, divToAdd, name) {
+    getDocData(path)
+    .then((contactData) => {
+        // console.log("Contact Info:", contactData);
+        let html = `<h2 class="notranslate">${name}</h2><p>${contactData.title}</p><br><br>${contactData.links}`;
+        divToAdd.innerHTML = html;
+    })
+    .catch((error) => {
+        console.error("Error fetching contact info:", error);
+    });
+}
+
 
 
 // Members news fetch
@@ -265,45 +240,53 @@ async function fetchMembersNews() {
     }
 }
 
-// Tariff fordeler fetch
-async function fetchTariffFordelList() {
-    const filePath = "messagesApp/medlemsfordelerDb/medlemsfordeler";
-    const fordelerToAdd = document.querySelector('#tariffFordelerUl');
+
+// FROM CHATGPT!!
+// Function to fetch data and add to HTML element
+async function fetchDataAndAddToList(filePath, elementSelector) {
     const querySnapshot = await getQuerySnapshot(filePath);
     if (querySnapshot) {
-        iterateAddHtmlAsList(querySnapshot, fordelerToAdd);
+        const elementToAdd = document.querySelector(elementSelector);
+        iterateAddHtmlAsList(querySnapshot, elementToAdd);
     }
 }
 
-// landing page fetch
-async function fetchLandingPage() {
-    const filePath = "messagesApp/landingPageDb/landingPage";
-    const landingPageToAdd = document.querySelector('#landing-page');
-    const querySnapshot = await getQuerySnapshot(filePath);
-    if (querySnapshot) {
-        iterateAddHtmlAsList(querySnapshot, landingPageToAdd);
+// Array of objects containing fetch information
+const fetchListOperations = [
+    { filePath: "messagesApp/medlemsfordelerDb/medlemsfordeler", elementSelector: '#tariffFordelerUl' },
+    { filePath: "messagesApp/landingPageDb/landingPage", elementSelector: '#landing-page' },
+    { filePath: "messagesApp/riksavtalenDb/riksavtalen", elementSelector: '#riksavtaler' },
+    { filePath: "messagesApp/newsPublicDb/newsPublic", elementSelector: '#nyheter' }
+];
+
+const fetchContactOperations = [
+    { filePath: "messagesApp/contactDb/contact/Ali Degirmenci", elementSelector: '#contact-info-ali' , name: 'Ali Degirmenci'},
+    { filePath: "messagesApp/contactDb/contact/Marina Fedjajeva", elementSelector: '#contact-info-marina', name: 'Marina Fedjajeva' },
+    { filePath: "messagesApp/contactDb/contact/Salwa Zakaria", elementSelector: '#contact-info-salwa', name: 'Salwa Zakaria' }
+];
+
+const fetchPhotoOpreations = [
+    { filePath: "messagesApp/photosDb/photos/raoe5QY36fWZgHVsg0qZ", elementSelector: '#contact-img1' },
+    { filePath: "messagesApp/photosDb/photos/ZjNylCkih0dUb0lhrRas", elementSelector: '#contact-img2' }
+];
+
+// Function to initiate fetch operations
+async function initiateFetchOperations() {
+    for (const { filePath, elementSelector } of fetchListOperations) {
+        await fetchDataAndAddToList(filePath, elementSelector);
+        
+    }
+    for (const {filePath, elementSelector} of fetchPhotoOpreations) {
+        await photoLoad(filePath, document.querySelector(elementSelector));
+    }
+    for (const {filePath, elementSelector, name} of fetchContactOperations) {
+        await contactInfoLoad(filePath, document.querySelector(elementSelector), name);
     }
 }
 
-// riksavtalen fetch
-async function fetchRiksavtaler() {
-    const filePath = "messagesApp/riksavtalenDb/riksavtalen";
-    const riksavtalenUl = document.querySelector('#riksavtaler');
-    const querySnapshot = await getQuerySnapshot(filePath);
-    if (querySnapshot) {
-        iterateAddHtmlAsList(querySnapshot, riksavtalenUl);
-    }
-}
+// Call the function to initiate fetch operations
+initiateFetchOperations();
 
-// nyheter fetch
-async function fetchPublicNews() {
-    const filePath = "messagesApp/newsPublicDb/newsPublic";
-    const publicNewsUl = document.querySelector('#nyheter');
-    const querySnapshot = await getQuerySnapshot(filePath);
-    if (querySnapshot) {
-        iterateAddHtmlAsList(querySnapshot, publicNewsUl);
-    }
-}
 
 
 
@@ -369,12 +352,8 @@ async function fetchTableContent() {
     }
 }
 
-// html build
 fetchTableContent();
-fetchTariffFordelList();
-fetchLandingPage();
-fetchRiksavtaler();
-fetchPublicNews();
+
 
 // intiate collapsible function
 document.addEventListener('DOMContentLoaded', function() {
@@ -406,4 +385,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-export { fetchMembersNews, addMessageDb, fetchMessages, fetchTableContent, fetchTariffFordelList }
+// THIS IS A TEST - NOT MODIFIED TO FUNCTION YET!!!
+// Function to load data for static web app
+function loadDataForApp() {
+    // Define paths for fetching data
+    const photoPath = 'photoPath';
+    const contactPath = 'contactPath';
+
+    // Fetch data using promises
+    const photoPromise = getDocData(photoPath, 'url');
+    const contactPromise = getDocData(contactPath);
+
+    // Wait for all promises to resolve
+    return Promise.all([photoPromise, contactPromise])
+        .then(([photoUrl, contactData]) => {
+            // Process the fetched data
+            console.log("Photo URL:", photoUrl);
+            console.log("Contact Info:", contactData);
+
+            // Return processed data if needed
+            return { photoUrl, contactData };
+        })
+        .catch((error) => {
+            console.error("Error loading data for app:", error);
+            throw error; // Re-throw the error for further handling if needed
+        });
+}
+
+
+
+export { fetchMembersNews, addMessageDb, fetchMessages }
