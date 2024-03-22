@@ -2,7 +2,6 @@ import {
     fetchMembersNews,
     fetchMessages,
     addMessageDb, 
-    fetchTableContent 
 } from "./firestore.js"
 import { 
     getAuth, 
