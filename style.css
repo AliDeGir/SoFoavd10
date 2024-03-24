@@ -256,21 +256,29 @@ body {
 }
 
 .display-container {
-    width: 360px;
     height: 400px;
     background-color: #ffffff68;
     border-radius: 4px;
-    padding: 20px;
     overflow-y: scroll;
-    scrollbar-color: #6c5a58 #767772;
+    scrollbar-color: var(--col-10) #767772;
+}
+
+.display-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 5px;
 }
 
 .display-data > li {
-    background-color: #929292e3;
+    background-color: #808080e3;
     border-radius: 6px;
     padding: 5px 10px;
     list-style: none;
     color: #333;
+    width: 50%;
+    margin-top: 10px;
 }
 
 .chat-container > div, input {
@@ -457,7 +465,7 @@ body {
         width: 94%;
     }
     .display-container {
-        width: 90%;
+        width: 100%;
     }
     .homeImageSpan {
         margin-right: 50px;
@@ -492,7 +500,7 @@ body {
     }
     .collapsible-header {
 
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 
@@ -512,7 +520,7 @@ body {
     padding: 30px 20px;
     color: rgb(4, 4, 4);
     cursor: pointer;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 .collapsible > li:not(:last-child) {
     border-bottom: 1px solid black;

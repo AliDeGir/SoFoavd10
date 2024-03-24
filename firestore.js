@@ -17,20 +17,22 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
 
-// snapshot listener for chat
+// Function to fetch and display messages
 async function fetchMessages() {
     const toDisplay = document.querySelector('#display-data');
+
     try {
-        const unsub = onSnapshot(collection(db, "messagesApp/messages/messagesDB"), (snapshot) => {
-            let messagesArray = [];
-            snapshot.docs.forEach(doc => {
-                const messages = doc.data();
-                messagesArray.push({
+        const userId = auth.currentUser.uid; // Get current user ID from Firebase Auth
+        const unsub = onSnapshot(collection(db, "messagesApp/messages/messagesDB"), snapshot => {
+            const messagesArray = snapshot.docs.map(doc => {
+                const message = doc.data();
+                return {
                     id: doc.id,
-                    timeStamp: messages.timeStamp,
-                    alias: messages.alias,
-                    content: messages.content
-                });
+                    timeStamp: message.timeStamp,
+                    alias: message.alias,
+                    content: message.content,
+                    isCurrentUser: message.userId === userId // Check if message is from current user
+                };
             });
 
             // Sort messages by timestamp
@@ -41,12 +43,14 @@ async function fetchMessages() {
                 const date = new Date(message.timeStamp);
                 const localDate = date.toLocaleDateString();
                 const localTime = date.toLocaleTimeString([], { timeStyle: 'short' });
+                const alignment = message.isCurrentUser ? 'auto' : '0'; // Align messages based on user
+                const bckgColor = message.isCurrentUser ? 'rgb(157, 198, 255)' : 'rgb(144, 226, 125)'
 
                 const li = `
-                <li>
-                    <div style="color: gray; font-size: 10px">${localDate}-${localTime}</div>
-                    <div><span style="color: orange">${message.alias}: </span><i>${message.content}</i></div>
-                </li><br>
+                    <li style="margin-left: ${alignment}; background-color: ${bckgColor}">
+                        <div style="color: #333; font-size: 10px">${localDate}-${localTime}</div>
+                        <div><span style="color: rgb(148, 122, 54)">${message.alias}: </span><i>${message.content}</i></div>
+                    </li><br>
                 `;
                 html += li;
             });
@@ -123,7 +127,7 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
                     // Create collapsible HTML structure for each item
                     const collapsibleHtml = `
                         <li>
-                            <div class="collapsible-header"><h4>${headerValue}</h4></div>
+                            <div class="collapsible-header"><h2>${headerValue}</h2></div>
                             <div class="collapsible-body">
                                 <p>
                                     ${contentValue}
@@ -156,7 +160,7 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
 
                 const collapsibleHtml = `
                     <li>
-                        <div class="collapsible-header"><h4>${headerValue}</h4></div>
+                        <div class="collapsible-header"><h2>${headerValue}</h2></div>
                         <div class="collapsible-body">
                             <p>
                                 ${contentValue}
