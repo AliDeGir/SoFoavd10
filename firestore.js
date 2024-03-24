@@ -358,31 +358,24 @@ fetchTableContent();
 // intiate collapsible function
 document.addEventListener('DOMContentLoaded', function() {
     const collapsibleElements = document.querySelectorAll('.collapsible');
-    collapsibleElements.forEach(function(collapsibleElement) {
-        collapsibleElement.addEventListener('click', function(event) {
-            // console.log('Header clicked!')
-            // Check if the clicked element or its ancestor matches the .collapsible-header selector
-            const header = event.target.closest('.collapsible-header');
-            if (header) {
-                // Find the corresponding collapsible-body
-                const body = header.nextElementSibling;
-                
-                // Close any open collapsible-bodies
-                const openBodies = document.querySelectorAll('.collapsible-body.open');
-                openBodies.forEach(function(openBody) {
-                    if (openBody !== body) {
-                        openBody.classList.remove('open');
-                    }
-                });
 
-                // Toggle the .open class on the body
-                body.classList.toggle('open');
-                // Stop the event from propagating further
-                event.stopPropagation();
+    collapsibleElements.forEach(collElement => {
+        collElement.addEventListener('click', event => {
+            const header = event.target.closest('.collapsible-header');
+            const body = header.nextElementSibling;
+            const pHeight = body.querySelector("p").offsetHeight;
+            const uHeight = body.querySelector("ul") ? body.querySelector("ul").offsetHeight : 0;
+            const totalHeight = pHeight + uHeight;
+
+            if (body.clientHeight) {
+                body.style.height = 0;
+            } else {
+                document.querySelectorAll('.collapsible-body').forEach(el => el.style.height = 0);
+                body.style.height = totalHeight + "px";
             }
         });
     });
-});
+})
 
 
 // THIS IS A TEST - NOT MODIFIED TO FUNCTION YET!!!

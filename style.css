@@ -121,6 +121,7 @@ body {
     background: var(--col-12);
     color: var(--col-6);
     padding: 8vh 5vw;
+    /* width: 100%; */
     min-height: 72vh;
 }
 
@@ -261,13 +262,15 @@ body {
     border-radius: 4px;
     padding: 20px;
     overflow-y: scroll;
-    scrollbar-color: #007 #767772;
+    scrollbar-color: #6c5a58 #767772;
 }
 
 .display-data > li {
-    background-color: #6c5a58e3;
+    background-color: #929292e3;
     border-radius: 6px;
     padding: 5px 10px;
+    list-style: none;
+    color: #333;
 }
 
 .chat-container > div, input {
@@ -498,35 +501,39 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2px;
+    gap: 10px;
 }
 
 .collapsible-header {
+    height: 50px;
     display: flex;
     align-items: center;
-    background-color: #767772;
+    background-color: #b8b8b8;
     padding: 30px 20px;
-    color: var(--col-6);
+    color: rgb(4, 4, 4);
     cursor: pointer;
+    font-size: 20px;
 }
-
+.collapsible > li:not(:last-child) {
+    border-bottom: 1px solid black;
+}
 .collapsible-body {
     height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in;
-    background-color: #8e8d8a;
-    color: #333;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    background-color: rgb(170, 170, 170);
+    color: rgb(4, 4, 4);
 }
 .collapsible-body > p {
-    padding: 30px;
-    
+    padding: 20px;
 }
-
 .collapsible-body > ul {
-    margin: 40px;
+    padding: 0px 20px 30px 40px;
 }
-
-.open {
-    flex-direction: column;
-    height: auto;
+.collapsible-body > ul > li {
+    padding-bottom: 10px;
 }
