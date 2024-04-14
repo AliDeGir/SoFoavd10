@@ -237,8 +237,8 @@ body {
     width: 70%;
     height: 30px;
     border-radius: 5px;
-    border: solid var(--col-8);
-    background: var(--col-8);
+    background: var(--dark-gray);
+    color: var(--col-11);
     font-size: 1rem;
 }
 
@@ -412,7 +412,7 @@ body {
 .forbund a {
     text-align: center;
     text-decoration: none;
-    color: #38b8ff;
+    color: var(--dark);
 }
 .forbund a:hover {
     color: red;
@@ -507,6 +507,7 @@ body {
     .card-3 {
         padding-top: 4vh;
         width: 80%;
+        height: 600px;
     }
     .forbund {
         padding-top: 4vh;
@@ -523,7 +524,6 @@ body {
         height: 18vh;
     }
     .collapsible-header {
-
         font-size: 12px;
     }
 }
@@ -565,7 +565,7 @@ body {
 }
 .collapsible-body > p {
     padding: 40px 30px;
-    width: 60%;
+    /* width: 60%; */
 }
 .collapsible-body > ul {
     padding: 0px 20px 30px 50px;
@@ -573,5 +573,5 @@ body {
 }
 .collapsible-body > ul > li {
     padding-bottom: 10px;
-    width: 80%;
+    /* width: 80%; */
 }
