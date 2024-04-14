@@ -7,8 +7,13 @@
     --col-8: #6c5a58;
     --col-9: #000000;
     --col-10: #333;
-    --col-11: #fff;
+    --col-11: #d3d3d3;
     --col-12: #111;
+    --dark: #090605;
+    --dark-gray: #676566;
+    --light-gray: #b4b2b3;
+    --light-blue: #a4bfd9;
+    --dark-blue: #5b92cb;
 }
 
 * {
@@ -17,7 +22,8 @@
 }
 
 body {
-    background: var(--col-12);
+    /* background: var(--col-12); */
+    letter-spacing: .4px;
 }
 
 .header-container {
@@ -26,7 +32,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: var(--logoColor);
+    background: linear-gradient(319deg, rgba(45,44,44,1) 0%, rgba(74,74,74,1) 50%, rgba(70,70,70,1) 100%);
     position: fixed;
     top: 0;
     justify-content: space-between;
@@ -41,7 +47,7 @@ body {
     font-family: "Concert One", sans-serif;
     padding-left: 3vw;
     font-weight: 800;
-    color: var(--col-7);
+    color: var(--col-11);
 }
 
 .becomeMemberButton {
@@ -65,7 +71,7 @@ body {
     font-size: 1.5vw;
     border-radius: 10px;
     background-color: rgba(255, 0, 0, 0.418);
-    color: #fff;
+    color: var(--col-11);
     border: red;
     display: none;
     justify-content: center;
@@ -97,7 +103,7 @@ body {
     align-items: center;
     justify-content: space-around;
     list-style: none;
-    color: var(--col-6);
+    color: var(--col-11);
     text-transform: uppercase;
 }
 
@@ -118,11 +124,12 @@ body {
     display: none;
     padding: 3vw;
     line-height: 1.5;
-    background: var(--col-12);
-    color: var(--col-6);
+    background: var(--light-gray);
+    color: rgb(4, 4, 4);
     padding: 8vh 5vw;
     /* width: 100%; */
     min-height: 72vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .mainDiv > div.active {
@@ -176,13 +183,14 @@ body {
 }
 
 .custom-table th, .custom-table td {
-    border: 1px solid #f2f2f2; /* Add border to table cells */
+    border: 1px solid #9c9c9c; /* Add border to table cells */
     padding: 8px; /* Add padding to table cells for better readability */
     word-break: break-word; /* Break long words to fit inside cells */
+    color: rgb(4, 4, 4);
 }
 
 .custom-table th {
-    background-color: #000; /* Add background color to header cells */
+    background-color: #848484; /* Add background color to header cells */
     text-align: center; /* Center-align header text */
 }
 
@@ -322,6 +330,26 @@ body {
     justify-content: space-around;
 }
 
+.card-1,
+.card-2,
+.card-3 {
+    width: 30%;
+    height: 700px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+.card-2 > .text {
+    padding-top: 400px;
+}
+
+.card-container img {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
 .links a {
     text-decoration: none;
     color: #2b5dd2ff;
@@ -376,11 +404,6 @@ body {
     margin-right: 100px;
 }
 
-.card-container img {
-    width: 350px;
-    height: 400px;
-    border-radius: 10px;
-}
 .forbund {
     display: flex;
     flex-direction: column;
@@ -403,8 +426,8 @@ body {
 .footer-container {
     width: 100vw;
     height: 2.5vh;
-    background-color: var(--logoColor);
-    color: var(--col-12);
+    background: linear-gradient(319deg, rgba(45,44,44,1) 0%, rgba(74,74,74,1) 50%, rgba(70,70,70,1) 100%);
+    color: var(--col-11);
     position: fixed;
     bottom: 0;
     display: flex;
@@ -483,6 +506,7 @@ body {
     .card-2,
     .card-3 {
         padding-top: 4vh;
+        width: 80%;
     }
     .forbund {
         padding-top: 4vh;
@@ -520,11 +544,13 @@ body {
     padding: 30px 20px;
     color: rgb(4, 4, 4);
     cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /* font-size: 20px; */
 }
-.collapsible > li:not(:last-child) {
+/* .collapsible > li:not(:last-child) {
     border-bottom: 1px solid black;
-}
+} */
 .collapsible-body {
     height: 0;
     overflow: hidden;
@@ -535,13 +561,17 @@ body {
     transition: height .5s;
     background-color: rgb(170, 170, 170);
     color: rgb(4, 4, 4);
+    border-radius: 8px;
 }
 .collapsible-body > p {
-    padding: 20px;
+    padding: 40px 30px;
+    width: 60%;
 }
 .collapsible-body > ul {
-    padding: 0px 20px 30px 40px;
+    padding: 0px 20px 30px 50px;
+    list-style: disc;
 }
 .collapsible-body > ul > li {
     padding-bottom: 10px;
+    width: 80%;
 }
