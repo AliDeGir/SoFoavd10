@@ -534,7 +534,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 }
 
 .collapsible-header {
