@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="Closeup.jpg" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Sodexo Club</title>
 </head>
@@ -22,7 +23,7 @@
 
     </header>
 
-    
+
 
     <nav class="nav-links browser-default">
 
@@ -46,7 +47,7 @@
     </div>
 
     <div class="mainDiv browser-default">
-        
+
         <div id="DIV1" class="active browser-default">
 
             <h1>Velkommen 😃</h1><br>
@@ -63,17 +64,17 @@
             <!-- <hr><br><br> -->
 
         </div>
-        
+
         <div id="DIV3">
 
             <h2>Fellesforbundet medlemsfordeler:</h2><br>
 
             <h3>Viktig å huske på at arbeidsgiver har retten til å si opp tariffavtalen hvis bedriften eller avdelingen har mindre enn 10% medlemmer i et fagforening!</h3><br>
-            
+
             <p>Under finner du en liste over forskjeller på med og uten tariffavtale:</p><br>
 
             <div id="table-div"></div><br><br><br>
-            
+
             <ul id="tariffFordelerUl" class="collapsible"></ul><br><br><br>
 
         </div>
@@ -102,14 +103,14 @@
                     <!-- change input type and id to email -->
                     <input type="email" class="user-input" id="USER-INPUT" placeholder="Epost addresse">
                     <!-- change input id to email -->
-                    <input 
-                        type="password" 
-                        id="PASSWORD-INPUT" 
-                        class="password" 
-                        placeholder="Medlemsnummer" 
+                    <input
+                        type="password"
+                        id="PASSWORD-INPUT"
+                        class="password"
+                        placeholder="Medlemsnummer"
                         onkeydown="if(event.keyCode == 13) document.getElementById('LOGIN-BTN').click()">
                     <!-- USE BUTTON TO LOGIN INSTEAD OF INPUT=BUTTON, BUTTON CAN BE PLACED ANYWHERE -->
-                    
+
                     <!-- change button id to login-btn -->
                     <button id="LOGIN-BTN">LOGIN</button>
 
@@ -123,23 +124,23 @@
                     <h4>Chat</h4>
                     <div class="display-container">
                         <ul id="display-data" class="display-data">
-                
+
                         </ul>
                     </div>
                     <input type="text" id="alias-input" class="alias-input" placeholder="Alias">
                     <div class="comment-container">
-                        <textarea id="comment-input" 
-                            cols="30" 
-                            rows="6" 
+                        <textarea id="comment-input"
+                            cols="30"
+                            rows="6"
                             class="comment-input"
                             placeholder="Skriv din melding her..."
                             onkeydown="if (event.keyCode == 13)
                                         document.getElementById('comment-btn').click()"></textarea>
                         <button id="comment-btn" class="comment-btn">Send</button>
                     </div>
-                    
+
                 </div>
-                
+
                 <br><br><hr><br><br>
 
                 <ul id="members-news" class="collapsible"></ul>
@@ -151,7 +152,7 @@
                     <p>For å finne ut hvor mye du har betalt hele året, finn fram desember lønnsslipp for gjeldende år og se "hittil i år" delen. Se bilde under, klikk på for å forstørre.</p><br>
                     <img src="Slipp.JPG" onclick="openFullscreen()" alt="bilde">
                 </div><br>
-                
+
             </div>
         </div>
 
@@ -191,12 +192,12 @@
             <p>© Sodexo Club - Oppdatert: 16. mars 2024</p>
         </footer>
 
-    <script type="text/javascript"> 
+    <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'no'}, 'google_translate_element');
         }
     </script>
-    
+
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="app1.js"></script>
