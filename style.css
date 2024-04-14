@@ -506,8 +506,9 @@ body {
     .card-2,
     .card-3 {
         padding-top: 4vh;
-        width: 80%;
+        width: 90%;
         height: 600px;
+        margin-top: 20px;
     }
     .forbund {
         padding-top: 4vh;
