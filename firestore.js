@@ -1,16 +1,16 @@
 import { firebaseConfig } from "./configFB.js"
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { 
-    getFirestore, 
-    collection, 
-    doc, 
-    setDoc, 
-    query, 
-    getDoc, 
-    getDocs, 
-    addDoc, 
-    onSnapshot 
+import {
+    getFirestore,
+    collection,
+    doc,
+    setDoc,
+    query,
+    getDoc,
+    getDocs,
+    addDoc,
+    onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
@@ -44,7 +44,7 @@ async function fetchMessages() {
                 const localDate = date.toLocaleDateString();
                 const localTime = date.toLocaleTimeString([], { timeStyle: 'short' });
                 const alignment = message.isCurrentUser ? 'auto' : '0'; // Align messages based on user
-                const bckgColor = message.isCurrentUser ? 'rgb(157, 198, 255)' : 'rgb(144, 226, 125)'
+                const bckgColor = message.isCurrentUser ? 'rgb(157, 198, 255)' : 'rgb(144, 226, 125)';
 
                 const li = `
                     <li style="margin-left: ${alignment}; background-color: ${bckgColor}">
@@ -56,6 +56,9 @@ async function fetchMessages() {
             });
 
             toDisplay.innerHTML = html;
+
+            scrollToBottom();
+
         });
 
         // Cleanup function to unsubscribe from the Firestore listener
@@ -67,20 +70,101 @@ async function fetchMessages() {
     }
 }
 
+// Function to scroll #display-data div to the bottom
+function scrollToBottom() {
+    const displayData = document.querySelector('#display-container');
+    displayData.scrollTop = displayData.scrollHeight;
+}
+
+// Call scrollToBottom function when the page loads or reloads
+window.addEventListener('load', scrollToBottom); // Scroll to bottom when page loads
+window.addEventListener('DOMContentLoaded', scrollToBottom); // Scroll to bottom when page content is fully loaded
+
+
 // add new comment to DB function
 async function addMessageDb() {
-    const commentInput = document.querySelector('#comment-input').value;
-    const aliasInput = document.querySelector('#alias-input').value;
-    const user = auth.currentUser;
-    const uid = user.uid;
-    const doqref = await addDoc(collection(db, "messagesApp/messages/messagesDB"), {
-        content: commentInput,
-        timeStamp: Date.now(),
-        userId: uid,
-        alias: aliasInput
+  const commentInput = document.querySelector("#comment-input").value.trim();
+  const aliasInput = document.querySelector("#alias-input").value.trim();
+  const commentField = document.querySelector("#comment-input");
+  const aliasField = document.querySelector("#alias-input");
+
+  // Check if either input is empty
+  if (!commentInput && !aliasInput) {
+    // Both inputs are empty, show error messages
+    commentField.setCustomValidity("Input required for comment");
+    aliasField.setCustomValidity("Input required for alias");
+    commentField.reportValidity();
+    aliasField.reportValidity();
+
+    // Schedule to clear custom validity after 3 seconds
+    setTimeout(() => {
+      commentField.setCustomValidity("");
+      aliasField.setCustomValidity("");
+    }, 3000); // 3000 milliseconds (3 seconds)
+
+    return; // Exit the function without adding to the database
+  } else if (!commentInput) {
+    // Only commentInput is empty, show error message for commentInput
+    commentField.setCustomValidity("Input required for comment");
+    aliasField.setCustomValidity("");
+    commentField.reportValidity();
+
+    // Schedule to clear custom validity after 3 seconds
+    setTimeout(() => {
+      commentField.setCustomValidity("");
+    }, 3000); // 3000 milliseconds (3 seconds)
+
+    aliasField.reportValidity();
+    return; // Exit the function without adding to the database
+  } else if (!aliasInput) {
+    // Only aliasInput is empty, show error message for aliasInput
+    aliasField.setCustomValidity("Input required for alias");
+    commentField.setCustomValidity("");
+    aliasField.reportValidity();
+
+    // Schedule to clear custom validity after 3 seconds
+    setTimeout(() => {
+      aliasField.setCustomValidity("");
+    }, 3000); // 3000 milliseconds (3 seconds)
+
+    commentField.reportValidity();
+    return; // Exit the function without adding to the database
+  }
+
+  const user = auth.currentUser;
+  if (!user) {
+    console.error("User not logged in."); // Handle this case appropriately
+    return;
+  }
+
+  const uid = user.uid;
+  const messagesCollectionRef = collection(
+    db,
+    "messagesApp/messages/messagesDB"
+  );
+
+  try {
+    const docRef = await addDoc(messagesCollectionRef, {
+      content: commentInput,
+      timeStamp: Date.now(),
+      userId: uid,
+      alias: aliasInput,
     });
-    document.querySelector('#comment-input').value = "";
+    console.log("Message added to database with ID: ", docRef.id);
+
+    // Reset input fields after successful submission
+    commentField.value = "";
+    aliasField.value = "";
+    commentField.setCustomValidity("");
+    aliasField.setCustomValidity("");
+  } catch (error) {
+    console.error("Error adding message: ", error);
+    // Handle error if adding to database fails
+  }
 }
+
+
+
 
 
 // getting data from firestore members news for website static html
@@ -177,7 +261,7 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
         // Set the HTML content to the memberNewsToAdd element
         memberNewsToAdd.innerHTML = html;
 
-        
+
     } catch (error) {
         console.error("Error iterating and adding HTML:", error);
     }
@@ -278,7 +362,7 @@ const fetchPhotoOpreations = [
 async function initiateFetchOperations() {
     for (const { filePath, elementSelector } of fetchListOperations) {
         await fetchDataAndAddToList(filePath, elementSelector);
-        
+
     }
     for (const {filePath, elementSelector} of fetchPhotoOpreations) {
         await photoLoad(filePath, document.querySelector(elementSelector));
@@ -350,7 +434,7 @@ async function fetchTableContent() {
         // console.log(table); // Output the generated HTML table
 
         return data;
-        
+
     } catch (error) {
         console.error("Error getting documents:", error);
     }
