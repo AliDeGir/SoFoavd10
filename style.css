@@ -176,7 +176,7 @@ body {
 
 .kontigentCalculator {
     width: 340px;
-    height: 500px;
+    height: 520px;
     background-color: rgb(196, 196, 196);
     border-radius: 10px;
     padding: 20px;
@@ -565,6 +565,9 @@ body {
     }
     .collapsible-header {
         font-size: 12px;
+    }
+    .kontigentCalculator {
+        height: 500px;
     }
 }
 
