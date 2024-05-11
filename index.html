@@ -51,22 +51,55 @@
 
             <h1>Velkommen 😃</h1><br>
 
-            <div class="kontigentCalculator">
-                <h2>Hvor mange kroner får du for å være organisert?</h2>
+            <div class="union_dues_calculator">
 
-                <label for="salary">Årslønn brutto:</label>
-                <input type="number" id="salary" class="salary" step="0.01" placeholder="Skriv beløp" required><br>
+                <h2 class="calc_header">Hvor mange kroner får du for å være medlem?</h2>
 
+                <div class="calc_input">
 
-                <label for="year">Velg et år:</label>
-                <select id="year" class="year">
-                    <option value="2023">2023 - 10.5 kr/t</option>
-                    <option value="2024">2024 - 7 kr/t</option>
-                </select><br>
+                    <div class="salary_input_div">
+                        <label for="salary">Årslønn brutto:</label>
+                        <input type="number" id="salary" class="salary_input" step="0.01" placeholder="Skriv årslønn i beløp" required>
+                    </div>
 
-                <button class="calcBtn" onclick="calculateSalary()">Kalkuler</button><br><br>
-                <h4>Resultat:</h4>
-                <div class="calcDisplay" id="result"></div>
+                    <div class="year_select_div">
+                        <label for="year">Velg et år:</label>
+                        <select id="year" class="year_input">
+                            <option value="2023">2023 - 10.5 kr/t</option>
+                            <option value="2024">2024 - 7 kr/t</option>
+                        </select>
+                    </div>
+
+                    <button class="calc_btn" onclick="calculateSalary()">Kalkuler</button>
+                </div>
+
+                <div class="calc_display">
+                    <div class="calc_result">
+                        <p>Sentrale og lokale økninger:</p>
+                        <p id="yearIncrease"></p>
+                    </div>
+                    <div class="calc_result">
+                        <p>Kontigent betalt i året:</p>
+                        <p id="unionDues"></p>
+                    </div>
+                    <div class="calc_result">
+                        <p>Skattefradrag på kontigent:</p>
+                        <p id="taxDeduction"></p>
+                    </div>
+                    <div class="tot_res">
+                        <h4>Total økning på ditt årslønn etter å ha betalt kontigent:</h4>
+                        <h2 id="totalResult" class="tot_res_value"></h2>
+                    </div>
+                </div>
+
+                <div class="calc_footer">
+                    <p><i>
+                        Dette er kun økning i kroner ved tariffoppgjør og lokale lønnsforhandlinger hvert år.
+                        Det er flere tillegger som økning på kveld, helg og natt og samt andre goder også.
+                        Med flere medlemmer har vi mulighet å øke lønn og andre goder. Bli medlem du også for å øke din egen timelønn.
+                    </i></p>
+                </div>
+
             </div><br><br>
 
             <ul id="landing-page" class="collapsible"></ul>

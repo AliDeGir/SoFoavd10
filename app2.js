@@ -36,34 +36,28 @@ function closeFullscreen() {
 }
 
 function calculateSalary() {
-  // Get the input values
-  const salary = parseFloat(document.getElementById("salary").value);
-  const year = document.getElementById("year").value;
-  const kontigent = salary * 0.019;
+    // Get the input values
+    const salary = parseFloat(document.getElementById("salary").value);
+    const year = document.getElementById("year").value;
+    const unionDues = salary * 0.019;
+    const taxDeduction = unionDues * 0.3;
+    // Perform any processing with the salary and chosen year
+    // For demonstration, let's say we simply multiply the salary by 1.1 (10% increase) if it's for 2024
 
-  const savedOnTax = kontigent * 0.3;
-  // Perform any processing with the salary and chosen year
-  // For demonstration, let's say we simply multiply the salary by 1.1 (10% increase) if it's for 2024
+    let yearIncrease;
 
-  let yearIncrease;
+    if (year === "2023") {
+        yearIncrease = 1700 * 11.1;
+    } else if (year === "2024") {
+        yearIncrease = 1700 * 7.6;
+    } else {
+        yearIncrease = "Invalid year"; // Just in case
+    }
 
-  if (year === "2023") {
-    yearIncrease = 1700 * 10.5;
-  } else if (year === "2024") {
-    yearIncrease = 1700 * 7;
-  } else {
-    yearIncrease = "Invalid year"; // Just in case
-  }
+    let result = taxDeduction + yearIncrease - unionDues;
 
-  let result = savedOnTax + yearIncrease - kontigent;
-
-  let html = `
-        <p>Betalt kontigent: ${kontigent.toFixed(2)} kr<br>
-        Skattefradrag på kontigent: ${savedOnTax.toFixed(2)} kr<br>
-        Økning på timelønn i ${year}: ${yearIncrease.toFixed(2)} kr<br><br>
-        Med medlemsskap går du i pluss minst:</p>
-        <h2>${result.toFixed(2)} kr</h2><br>
-        <p><i>Da er ikke økning i lokale lønnsforhandlinger inkludert i kalkulasjonen. Med flere medlemmer har vi mulighet å øke dette beløpet.</i></p>
-    `;
-  document.getElementById("result").innerHTML = html;
+    document.getElementById("unionDues").innerHTML = `${unionDues.toFixed(2)} kr`;
+    document.getElementById("taxDeduction").innerHTML = `${taxDeduction.toFixed(2)} kr`;
+    document.getElementById("yearIncrease").innerHTML = `${yearIncrease.toFixed(2)} kr`;
+    document.getElementById("totalResult").innerHTML = `${result.toFixed(2)} kr`;
 }
