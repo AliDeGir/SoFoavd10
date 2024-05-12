@@ -83,84 +83,84 @@ window.addEventListener('DOMContentLoaded', scrollToBottom); // Scroll to bottom
 
 // add new comment to DB function
 async function addMessageDb() {
-  const commentInput = document.querySelector("#comment-input").value.trim();
-  const aliasInput = document.querySelector("#alias-input").value.trim();
-  const commentField = document.querySelector("#comment-input");
-  const aliasField = document.querySelector("#alias-input");
+    const commentInput = document.querySelector("#comment-input").value.trim();
+    const aliasInput = document.querySelector("#alias-input").value.trim();
+    const commentField = document.querySelector("#comment-input");
+    const aliasField = document.querySelector("#alias-input");
 
-  // Check if either input is empty
-  if (!commentInput && !aliasInput) {
-    // Both inputs are empty, show error messages
-    commentField.setCustomValidity("Input required for comment");
-    aliasField.setCustomValidity("Input required for alias");
-    commentField.reportValidity();
-    aliasField.reportValidity();
+    // Check if either input is empty
+    if (!commentInput && !aliasInput) {
+        // Both inputs are empty, show error messages
+        commentField.setCustomValidity("Input required for comment");
+        aliasField.setCustomValidity("Input required for alias");
+        commentField.reportValidity();
+        aliasField.reportValidity();
 
-    // Schedule to clear custom validity after 3 seconds
-    setTimeout(() => {
-      commentField.setCustomValidity("");
-      aliasField.setCustomValidity("");
-    }, 3000); // 3000 milliseconds (3 seconds)
+        // Schedule to clear custom validity after 3 seconds
+        setTimeout(() => {
+        commentField.setCustomValidity("");
+        aliasField.setCustomValidity("");
+        }, 3000); // 3000 milliseconds (3 seconds)
 
-    return; // Exit the function without adding to the database
-  } else if (!commentInput) {
-    // Only commentInput is empty, show error message for commentInput
-    commentField.setCustomValidity("Input required for comment");
-    aliasField.setCustomValidity("");
-    commentField.reportValidity();
+        return; // Exit the function without adding to the database
+    } else if (!commentInput) {
+        // Only commentInput is empty, show error message for commentInput
+        commentField.setCustomValidity("Input required for comment");
+        aliasField.setCustomValidity("");
+        commentField.reportValidity();
 
-    // Schedule to clear custom validity after 3 seconds
-    setTimeout(() => {
-      commentField.setCustomValidity("");
-    }, 3000); // 3000 milliseconds (3 seconds)
+        // Schedule to clear custom validity after 3 seconds
+        setTimeout(() => {
+        commentField.setCustomValidity("");
+        }, 3000); // 3000 milliseconds (3 seconds)
 
-    aliasField.reportValidity();
-    return; // Exit the function without adding to the database
-  } else if (!aliasInput) {
-    // Only aliasInput is empty, show error message for aliasInput
-    aliasField.setCustomValidity("Input required for alias");
-    commentField.setCustomValidity("");
-    aliasField.reportValidity();
+        aliasField.reportValidity();
+        return; // Exit the function without adding to the database
+    } else if (!aliasInput) {
+        // Only aliasInput is empty, show error message for aliasInput
+        aliasField.setCustomValidity("Input required for alias");
+        commentField.setCustomValidity("");
+        aliasField.reportValidity();
 
-    // Schedule to clear custom validity after 3 seconds
-    setTimeout(() => {
-      aliasField.setCustomValidity("");
-    }, 3000); // 3000 milliseconds (3 seconds)
+        // Schedule to clear custom validity after 3 seconds
+        setTimeout(() => {
+        aliasField.setCustomValidity("");
+        }, 3000); // 3000 milliseconds (3 seconds)
 
-    commentField.reportValidity();
-    return; // Exit the function without adding to the database
-  }
+        commentField.reportValidity();
+        return; // Exit the function without adding to the database
+    }
 
-  const user = auth.currentUser;
-  if (!user) {
-    console.error("User not logged in."); // Handle this case appropriately
-    return;
-  }
+    const user = auth.currentUser;
+    if (!user) {
+        console.error("User not logged in."); // Handle this case appropriately
+        return;
+    }
 
-  const uid = user.uid;
-  const messagesCollectionRef = collection(
-    db,
-    "messagesApp/messages/messagesDB"
-  );
+    const uid = user.uid;
+    const messagesCollectionRef = collection(
+        db,
+        "messagesApp/messages/messagesDB"
+    );
 
-  try {
-    const docRef = await addDoc(messagesCollectionRef, {
-      content: commentInput,
-      timeStamp: Date.now(),
-      userId: uid,
-      alias: aliasInput,
-    });
-    console.log("Message added to database with ID: ", docRef.id);
+    try {
+        const docRef = await addDoc(messagesCollectionRef, {
+            content: commentInput,
+            timeStamp: Date.now(),
+            userId: uid,
+            alias: aliasInput,
+        });
+        console.log("Message added to database with ID: ", docRef.id);
 
-    // Reset input fields after successful submission
-    commentField.value = "";
-    aliasField.value = "";
-    commentField.setCustomValidity("");
-    aliasField.setCustomValidity("");
-  } catch (error) {
-    console.error("Error adding message: ", error);
-    // Handle error if adding to database fails
-  }
+        // Reset input fields after successful submission
+        commentField.value = "";
+        aliasField.value = "";
+        commentField.setCustomValidity("");
+        aliasField.setCustomValidity("");
+    } catch (error) {
+        console.error("Error adding message: ", error);
+        // Handle error if adding to database fails
+    }
 }
 
 

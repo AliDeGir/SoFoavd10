@@ -12,10 +12,10 @@ const fullPage = document.querySelector('#fullpage');
 const mainPage = document.querySelector('.mainDiv');
 
 imgs.forEach(img => {
-  img.addEventListener('click', function() {
-    fullPage.style.backgroundImage = 'url(' + img.src + ')';
-    fullPage.style.display = 'block';
-  });
+    img.addEventListener('click', function() {
+        fullPage.style.backgroundImage = 'url(' + img.src + ')';
+        fullPage.style.display = 'block';
+    });
 });
 
 function openFullscreen() {
@@ -36,9 +36,9 @@ function closeFullscreen() {
 }
 
 function calculateSalary() {
-  // Get the input values
-  const salary_input = document.getElementById("salary");
-  const salary = parseFloat(document.getElementById("salary").value.trim());
+    // Get the input values
+    const salary_input = document.getElementById("salary");
+    const salary = parseFloat(document.getElementById("salary").value.trim());
     const year = document.getElementById("year").value;
     const unionDues = salary * 0.019;
     const taxDeduction = unionDues * 0.3;
@@ -46,16 +46,16 @@ function calculateSalary() {
     // For demonstration, let's say we simply multiply the salary by 1.1 (10% increase) if it's for 2024
 
     if (!salary || isNaN(salary)) {
-      salary_input.classList.add('required');
-      salary_input.classList.add('placeholder_red');
-      salary_input.placeholder = "Vennligst skriv årslønn!";
+        salary_input.classList.add('required');
+        salary_input.classList.add('placeholder_red');
+        salary_input.placeholder = "Vennligst skriv årslønn!";
 
-      setTimeout(() => {
-        salary_input.classList.remove("required");
-        salary_input.classList.remove("placeholder_red");
-      }, 4000);
+        setTimeout(() => {
+          salary_input.classList.remove("required");
+          salary_input.classList.remove("placeholder_red");
+        }, 4000);
 
-      return;
+        return;
     }
 
     let yearIncrease;
