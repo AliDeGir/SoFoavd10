@@ -211,7 +211,14 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
                     // Create collapsible HTML structure for each item
                     const collapsibleHtml = `
                         <li>
-                            <div class="collapsible-header"><h2>${headerValue}</h2></div>
+                            <div class="collapsible-header">
+                                <h2>${headerValue}</h2>
+                                <span class="arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </span>
+                            </div>
                             <div class="collapsible-body">
                                 <p>
                                     ${contentValue}
@@ -244,7 +251,14 @@ function iterateAddHtmlAsList(querySnapshot, memberNewsToAdd) {
 
                 const collapsibleHtml = `
                     <li>
-                        <div class="collapsible-header"><h2>${headerValue}</h2></div>
+                        <div class="collapsible-header">
+                            <h2>${headerValue}</h2>
+                            <span class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </span>
+                        </div>
                         <div class="collapsible-body">
                             <p>
                                 ${contentValue}
@@ -455,11 +469,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const uHeight = body.querySelector("ul") ? body.querySelector("ul").offsetHeight : 0;
             const totalHeight = pHeight + uHeight;
 
+            const arrow = header.querySelector('.arrow');
+
             if (body.clientHeight) {
                 body.style.height = 0;
+                arrow.style.transform = 'rotate(90deg)';
             } else {
                 document.querySelectorAll('.collapsible-body').forEach(el => el.style.height = 0);
                 body.style.height = totalHeight + "px";
+                arrow.style.transform = 'rotate(0deg)';
             }
         });
     });

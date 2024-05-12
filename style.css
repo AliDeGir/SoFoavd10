@@ -520,6 +520,16 @@ body {
     color: #fff;
 }
 
+/* Arrow */
+.arrow {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px; /* Adjust as needed for spacing */
+    transform: rotate(90deg);
+    transition: transform 0.5s ease; /* Smooth transition for arrow rotation */
+}
+
 
 @media only screen and (max-width: 640px) {
     .logo {
