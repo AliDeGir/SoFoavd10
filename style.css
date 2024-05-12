@@ -466,7 +466,7 @@ body {
 
         .salary_input, .year_input {
             margin-left: 10px;
-            padding: 4px;
+            padding: 4px 2px;
         }
 
         .year_input {
@@ -513,10 +513,11 @@ body {
 }
 
 .required {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    background-color: red;
 }
 .placeholder_red::placeholder {
-    color: red;
+    color: #fff;
 }
 
 

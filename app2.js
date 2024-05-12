@@ -45,10 +45,16 @@ function calculateSalary() {
     // Perform any processing with the salary and chosen year
     // For demonstration, let's say we simply multiply the salary by 1.1 (10% increase) if it's for 2024
 
-    if (!salary) {
+    if (!salary || isNaN(salary)) {
       salary_input.classList.add('required');
       salary_input.classList.add('placeholder_red');
-      salary_input.placeholder = "Please enter a valid salary amount";
+      salary_input.placeholder = "Vennligst skriv årslønn!";
+
+      setTimeout(() => {
+        salary_input.classList.remove("required");
+        salary_input.classList.remove("placeholder_red");
+      }, 4000);
+
       return;
     }
 
