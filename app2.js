@@ -36,13 +36,21 @@ function closeFullscreen() {
 }
 
 function calculateSalary() {
-    // Get the input values
-    const salary = parseFloat(document.getElementById("salary").value);
+  // Get the input values
+  const salary_input = document.getElementById("salary");
+  const salary = parseFloat(document.getElementById("salary").value.trim());
     const year = document.getElementById("year").value;
     const unionDues = salary * 0.019;
     const taxDeduction = unionDues * 0.3;
     // Perform any processing with the salary and chosen year
     // For demonstration, let's say we simply multiply the salary by 1.1 (10% increase) if it's for 2024
+
+    if (!salary) {
+      salary_input.classList.add('required');
+      salary_input.classList.add('placeholder_red');
+      salary_input.placeholder = "Please enter a valid salary amount";
+      return;
+    }
 
     let yearIncrease;
 
