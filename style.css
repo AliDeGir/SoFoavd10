@@ -449,6 +449,56 @@ body {
     background-color: black;
 }
 
+.collapsible {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 20px;
+}
+
+.collapsible-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #b8b8b8;
+    padding: 30px 20px;
+    color: rgb(4, 4, 4);
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* font-size: 20px; */
+}
+
+/* .collapsible > li:not(:last-child) {
+    border-bottom: 1px solid black;
+} */
+
+.collapsible-body {
+    height: 0;
+    overflow: hidden;
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    background-color: rgb(170, 170, 170);
+    color: rgb(4, 4, 4);
+    border-radius: 8px;
+}
+.collapsible-body > p {
+    padding: 40px 30px;
+    /* width: 60%; */
+}
+.collapsible-body > ul {
+    padding: 0px 20px 30px 50px;
+    list-style: disc;
+}
+.collapsible-body > ul > li {
+    padding-bottom: 10px;
+    /* width: 80%; */
+}
+
 .union_dues_calculator {
     background-color: #b8b8b8;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -605,58 +655,13 @@ body {
     .slipp-img img {
         height: 18vh;
     }
+    .collapsible {
+        width: 100%;
+    }
     .collapsible-header {
         font-size: 12px;
     }
     .union_dues_calculator {
         width: 100%;
     }
-}
-
-.collapsible {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-}
-
-.collapsible-header {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    background-color: #b8b8b8;
-    padding: 30px 20px;
-    color: rgb(4, 4, 4);
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* font-size: 20px; */
-}
-/* .collapsible > li:not(:last-child) {
-    border-bottom: 1px solid black;
-} */
-.collapsible-body {
-    height: 0;
-    overflow: hidden;
-    -moz-transition: height .5s;
-    -ms-transition: height .5s;
-    -o-transition: height .5s;
-    -webkit-transition: height .5s;
-    transition: height .5s;
-    background-color: rgb(170, 170, 170);
-    color: rgb(4, 4, 4);
-    border-radius: 8px;
-}
-.collapsible-body > p {
-    padding: 40px 30px;
-    /* width: 60%; */
-}
-.collapsible-body > ul {
-    padding: 0px 20px 30px 50px;
-    list-style: disc;
-}
-.collapsible-body > ul > li {
-    padding-bottom: 10px;
-    /* width: 80%; */
 }
